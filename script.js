@@ -204,10 +204,7 @@
   const btnSubmitOrder = $("#btn-submit-order");
   const submitText = $("#submit-text");
   const btnDirectWhatsapp = $("#btn-direct-whatsapp");
-  const orderSuccessModal = $("#order-success-modal");
-  const modalOrderId = $("#modal-order-id");
-  const modalWhatsappBtn = $("#modal-whatsapp-btn");
-  const btnCloseModal = $("#btn-close-modal");
+  const orderInlineSuccess = $("#order-inline-success");
 
   /* ---------------- Price Calculations ---------------- */
   function calculateTotal() {
@@ -1006,41 +1003,29 @@
         order_id: orderId,
       });
 
-      // Show success modal
-      if (modalOrderId) modalOrderId.textContent = orderId;
-      if (modalWhatsappBtn) {
-        const waText = `سلام متجر منارة، أنا ${name} من ${city}. قمت بتسجيل طلب ${prod.name} (${state.selectedColorName} - مقاس: ${state.selectedSize} - كمية: ${state.quantity}) برقم ${orderId} بمبلغ ${total} درهم. أرجو تأكيد إرسال الطلبية وشكراً!`;
-        modalWhatsappBtn.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(waText)}`;
-      }
-
-      if (orderSuccessModal) orderSuccessModal.classList.add("show");
-
       // Reset form
       orderForm.reset();
       state.quantity = 1;
       if (qtyInput) qtyInput.value = "1";
       updatePriceUI();
 
-      state.submitting = false;
-      btnSubmitOrder.disabled = false;
-      submitText.textContent = "اضغط هنا لتأكيد الطلب الآن 🛍️";
-    });
-  }
-
-  /* ---------------- Modal Events ---------------- */
-  function initModal() {
-    if (!orderSuccessModal) return;
-
-    if (btnCloseModal) {
-      btnCloseModal.addEventListener("click", () => {
-        orderSuccessModal.classList.remove("show");
-      });
-    }
-
-    orderSuccessModal.addEventListener("click", (e) => {
-      if (e.target === orderSuccessModal) {
-        orderSuccessModal.classList.remove("show");
+      // Show inline success feedback directly without any popup modal
+      if (orderInlineSuccess) {
+        orderInlineSuccess.style.display = "flex";
+        orderInlineSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
       }
+
+      btnSubmitOrder.style.background = "#059669";
+      btnSubmitOrder.style.borderColor = "#047857";
+      submitText.textContent = "تم تسجيل طلبك بنجاح! سنتصل بك قريباً لتأكيده ✅";
+
+      setTimeout(() => {
+        state.submitting = false;
+        btnSubmitOrder.disabled = false;
+        btnSubmitOrder.style.background = "";
+        btnSubmitOrder.style.borderColor = "";
+        submitText.textContent = "اضغط هنا لتأكيد الطلب الآن 🛍️";
+      }, 7000);
     });
   }
 
@@ -1072,7 +1057,6 @@
     initFaq();
     initCitySelector();
     initOrderForm();
-    initModal();
     initMobileBar();
     initRouting();
   }

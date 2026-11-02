@@ -544,6 +544,15 @@
               <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
             </div>
 
+            <!-- Inline Success Notification (Shown on submit without popup modal) -->
+            <div class="order-inline-success" id="order-inline-success" style="display:none;" role="status">
+              <span class="ois-icon">✅</span>
+              <div class="ois-content">
+                <strong>تم تسجيل طلبكم بنجاح!</strong>
+                <p>شكراً لثقتكم في متجر منارة. سنتصل بكم هاتفياً لتأكيد الشحن والتوصيل المجاني لباب منزلكم.</p>
+              </div>
+            </div>
+
             <!-- Big Confirmation Button with ample margin to avoid overlapping -->
             <button type="submit" class="btn-submit-order" id="btn-submit-order">
               <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
@@ -569,14 +578,11 @@
 
   </main>
 
-  </main>
-
   <!-- Store Footer -->
   <footer class="main-footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <img src="images/menara-logo.jpg" alt="متجر منارة" class="footer-logo" />
-        <div>
+        <div class="footer-brand-text">
           <h3>متجر منارة • MENARA STORE</h3>
           <p>وجهتكم الأولى للأزياء والأناقة والموضة في المغرب 🇲🇦</p>
         </div>
@@ -603,26 +609,7 @@
     </button>
   </aside>
 
-  <!-- Order Success Modal -->
-  <div class="modal-overlay" id="order-success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-card">
-      <div class="modal-icon">🎉</div>
-      <h3 id="modal-title">تم استلام طلبك بنجاح!</h3>
-      <p class="modal-msg">شكراً لثقتكم في متجر منارة. رقم طلبكم هو: <strong id="modal-order-id" style="color:#059669;">#------</strong></p>
-      <p style="font-size:12.5px; color:#64748b; margin-bottom:12px;">سيتصل بكم فريق خدمة الزبناء قريباً لتأكيد تفاصيل الشحن والتوصيل المجاني لباب منزلكم.</p>
-      
-      <a href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="modal-whatsapp-btn" style="margin-top:6px;">
-        <span>💬</span>
-        <span>تأكيد الطلب عبر الواتساب فوراً</span>
-      </a>
-
-      <button type="button" id="btn-close-modal" style="background:#f1f5f9; border:none; border-radius:10px; padding:10px; font-family:inherit; font-size:13px; font-weight:800; color:#475569; cursor:pointer; margin-top:4px;">
-        إغلاق
-      </button>
-    </div>
-  </div>
-
   <!-- Main JavaScript Logic -->
-  <script src="script.js?v=20261102v1"></script>
+  <script src="script.js?v=20261102v2"></script>
 </body>
 </html>
