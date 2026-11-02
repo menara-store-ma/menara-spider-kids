@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>متجر منارة | طقم بيجامة سبايدرمان للأطفال - جودة قطنية ممتازة</title>
-  <meta name="description" content="طقم بيجامة سبايدرمان للأطفال من متجر منارة المغربي. 3 أطقم قطنية فاخرة ناعمة ودافئة. توصيل مجاني والدفع عند الاستلام." />
+  <title>متجر منارة | MENARA STORE - المتجر المغربي الأول للأناقة والموضة</title>
+  <meta name="description" content="متجر منارة الإلكتروني بالمغرب. تشكيلة حصرية من المعاطف الرجالية الفاخرة وملابس وأطقم الأطفال الشتوية بأعلى جودة. توصيل مجاني والدفع عند الاستلام بعد المعاينة." />
   <link rel="icon" type="image/jpeg" href="images/menara-logo.jpg" />
-  <meta property="og:title" content="طقم بيجامة سبايدرمان للأطفال - متجر منارة" />
-  <meta property="og:description" content="عرض حصري: 3 أطقم بيجامة سبايدرمان بـ 199 درهم فقط مع توصيل مجاني لباب المنزل!" />
-  <meta property="og:image" content="images/trio-pack-1.jpeg" />
-  <meta property="og:type" content="product" />
+  <meta property="og:title" content="متجر منارة | MENARA STORE - تسوق أرقى الأزياء الشتوية" />
+  <meta property="og:description" content="تخفيضات حصرية وعروض شتوية لا تفوت مع التوصيل المجاني والدفع عند الاستلام لكافة مدن المغرب!" />
+  <meta property="og:image" content="images/coat-black.jpg" />
+  <meta property="og:type" content="website" />
   <meta name="theme-color" content="#059669" />
 
   <!-- Fonts -->
@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261029v7" />
+  <link rel="stylesheet" href="style.css?v=20261102v1" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -41,70 +41,210 @@
 <body>
 
   <!-- Top Announcement Bar -->
-  <aside class="top-bar" aria-label="شريط العروض">
-    <span>⚡ تخفيض استثنائي 40% لفترة محدودة</span>
+  <aside class="top-bar" aria-label="شريط العروض الترويجية">
     <span>🚚 التوصيل بالمجان لجميع مدن المغرب</span>
-    <span>ينتهي العرض بعد: <span class="timer-badge" id="top-timer">00:14:32</span></span>
+    <span>💵 الدفع عند الاستلام بعد معاينة السلعة</span>
+    <span>ينتهي عرض الموسم بعد: <span class="timer-badge" id="top-timer">00:14:32</span></span>
   </aside>
 
-  <!-- Sticky Header -->
+  <!-- Store Header -->
   <header class="main-header">
     <div class="header-container">
-      <a href="#" class="brand-wrap" aria-label="الصفحة الرئيسية لمتجر منارة">
+      <a href="#store-catalog" class="brand-wrap" aria-label="الصفحة الرئيسية لمتجر منارة">
         <img src="images/menara-logo.jpg" alt="شعار متجر منارة" class="brand-logo" />
         <div class="brand-titles">
           <h1>متجر منارة</h1>
-          <p>MENARA STORE • للتسوق الموثوق</p>
+          <p>MENARA STORE • التسوق الموثوق في المغرب</p>
         </div>
       </a>
+
+      <!-- Quick Trust Badges in Header -->
+      <div class="header-features-strip">
+        <span class="h-badge">🚚 شحن مجاني</span>
+        <span class="h-badge">💵 دفع عند الاستلام</span>
+        <span class="h-badge">🔄 استبدال مجاني</span>
+      </div>
+
       <div class="header-right">
-        <div class="rating-badge" title="تقييم المتجر 5 نجوم من أكثر من 2,500 زبون">
-          <span class="stars">★★★★★</span>
-          <span>5.0</span>
-        </div>
-        <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20عندي%20استفسار%20حول%20طقم%20بيجامة%20سبايدرمان" target="_blank" rel="noopener noreferrer" class="header-whatsapp-btn" aria-label="تواصل عبر الواتساب">
+        <a href="https://wa.me/212710054951?text=سلام%20عليكم%20متجر%20منارة،%20عندي%20استفسار" target="_blank" rel="noopener noreferrer" class="header-whatsapp-btn" aria-label="تواصل عبر الواتساب">
           <span>💬</span>
-          <span>واتساب</span>
+          <span>خدمة الزبناء</span>
         </a>
       </div>
     </div>
+
+    <!-- Store Category Nav Bar -->
+    <nav class="store-nav-bar" aria-label="أقسام المتجر">
+      <div class="store-nav-container">
+        <button type="button" class="nav-tab active" data-category="all">
+          <span>🌟</span> <span>جميع المنتجات</span>
+        </button>
+        <button type="button" class="nav-tab" data-category="men">
+          <span>🧥</span> <span>معاطف رجالية فاخرة</span>
+        </button>
+        <button type="button" class="nav-tab" data-category="polo">
+          <span>👕</span> <span>أطقم بولو شتوية للأطفال</span>
+        </button>
+        <button type="button" class="nav-tab" data-category="pajama">
+          <span>🕷️</span> <span>بيجامات سبايدرمان للأطفال</span>
+        </button>
+      </div>
+    </nav>
   </header>
+
+  <!-- Hero Banner -->
+  <section class="store-hero-banner">
+    <div class="hero-content">
+      <span class="hero-pill">❄️ كوليكسيون شتاء 2026 الحصرية</span>
+      <h2 class="hero-title">أناقة راقية • دفء فائق • جودة مضمونة 100%</h2>
+      <p class="hero-desc">اكتشف أرقى المعاطف الرجالية وأفخم أطقم وملابس الأطفال بأثمنة حصرية وتوصيل مجاني لباب منزلك مع حق المعاينة قبل الدفع.</p>
+      <div class="hero-actions">
+        <a href="#store-catalog" class="btn-hero-primary">🛍️ تصفح منتجات المتجر الآن</a>
+        <a href="#store-all-colors-showcase" class="btn-hero-secondary">📸 استعراض جميع الألوان</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Main Container -->
   <main class="page-container">
-    
-    <!-- Main Product Showcase Card (2 Columns on Desktop) -->
+
+    <!-- Store Products Catalog Grid -->
+    <section class="store-catalog-section" id="store-catalog">
+      <div class="section-header-box">
+        <div class="section-badge">🛍️ كتالوج المتجر</div>
+        <h2 class="section-main-title">منتجات متجر منارة المتوفرة حالياً</h2>
+        <p class="section-sub-title">اختر المنتوج الذي يناسبك لتحديد المقاس واللون وإتمام طلبك بسهولة وسرعة</p>
+      </div>
+
+      <div class="products-grid" id="products-catalog-grid">
+        
+        <!-- Product Card 1: Coat -->
+        <article class="store-product-card active" data-product-id="coat" id="card-coat">
+          <div class="product-badge-flag">الأكثر طلباً للرجال 🔥</div>
+          <div class="card-img-wrap">
+            <img src="images/coat-black.jpg" alt="معطف رجالي شتوي فاخر" id="catalog-img-coat" loading="lazy" />
+            <div class="color-mini-preview">
+              <span class="mini-dot active" style="background:#0f172a;" title="أسود"></span>
+              <span class="mini-dot" style="background:#94a3b8;" title="رمادي"></span>
+              <span class="mini-dot" style="background:#1e3a8a;" title="أزرق بترولي"></span>
+            </div>
+          </div>
+          <div class="card-details">
+            <span class="card-cat-tag">أزياء رجالية</span>
+            <h3 class="card-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h3>
+            <div class="card-rating">
+              <span class="stars">★★★★★</span>
+              <span>4.9 (890+ تقييم)</span>
+            </div>
+            <p class="card-excerpt">معطف صوف كاشمير راقي مبطن بالكامل ومقاوم للبرد القارس. ياقة مريحة وقصة إيطالية ملكية أنيقة.</p>
+            <div class="card-price-row">
+              <div class="card-price">
+                <span class="amount">349</span> <small>درهم</small>
+              </div>
+              <div class="card-old-price">499 درهم</div>
+              <span class="card-save-badge">وفر 150 د.م</span>
+            </div>
+            <button type="button" class="btn-select-product" data-select-product="coat">
+              <span>🛒 اختيار المقاس واللون للطلب</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 2: Polo Kids -->
+        <article class="store-product-card" data-product-id="polo" id="card-polo">
+          <div class="product-badge-flag flag-blue">تشكيلة جديدة وحصرية ✨</div>
+          <div class="card-img-wrap">
+            <img src="images/polo-green-marble.jpg" alt="طقم بولو شتوي للأطفال" id="catalog-img-polo" loading="lazy" />
+            <div class="color-mini-preview">
+              <span class="mini-dot active" style="background:#10b981;" title="أخضر رخامي"></span>
+              <span class="mini-dot" style="background:#d4b996;" title="بيج رخامي"></span>
+              <span class="mini-dot" style="background:#64748b;" title="رمادي رخامي"></span>
+              <span class="mini-dot" style="background:#06b6d4;" title="تركواز رخامي"></span>
+              <span class="mini-dot" style="background:#cbd5e1;" title="فضي رخامي"></span>
+              <span class="mini-dot" style="background:#78350f;" title="موكا رخامي"></span>
+            </div>
+          </div>
+          <div class="card-details">
+            <span class="card-cat-tag">ملابس أطفال</span>
+            <h3 class="card-title">طقم بولو شتوي فاخر للأطفال (Polo Kids)</h3>
+            <div class="card-rating">
+              <span class="stars">★★★★★</span>
+              <span>5.0 (1,450+ تقييم)</span>
+            </div>
+            <p class="card-excerpt">سويت شيرت كابيشون بسحاب وبنطلون رياضي مبطن بقطن دافئ ومطرز بشعار بولو مع طبعة رخامية عصرية مذهلة.</p>
+            <div class="card-price-row">
+              <div class="card-price">
+                <span class="amount">199</span> <small>درهم</small>
+              </div>
+              <div class="card-old-price">299 درهم</div>
+              <span class="card-save-badge">وفر 100 د.م</span>
+            </div>
+            <button type="button" class="btn-select-product" data-select-product="polo">
+              <span>🛒 اختيار المقاس واللون للطلب</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product Card 3: Spiderman Pajama -->
+        <article class="store-product-card" data-product-id="spiderman" id="card-spiderman">
+          <div class="product-badge-flag flag-gold">عرض التوفير الأكبر 💥</div>
+          <div class="card-img-wrap">
+            <img src="images/trio-pack-1.jpeg" alt="طقم بيجامة سبايدرمان للأطفال" id="catalog-img-spiderman" loading="lazy" />
+            <div class="color-mini-preview">
+              <span class="mini-dot active" style="background:#1e293b;" title="المجموعة 1"></span>
+              <span class="mini-dot" style="background:#059669;" title="المجموعة 2"></span>
+            </div>
+          </div>
+          <div class="card-details">
+            <span class="card-cat-tag">ملابس أطفال</span>
+            <h3 class="card-title">طقم بيجامة سبايدرمان للأطفال (باقة 3 أطقم)</h3>
+            <div class="card-rating">
+              <span class="stars">★★★★★</span>
+              <span>5.0 (2,500+ تقييم)</span>
+            </div>
+            <p class="card-excerpt">باقة ممتازة تحتوي على 3 أطقم قطنية كاملة بألوان مختلفة، رسومات سبايدرمان محبوبة وخياطة مغربية متينة.</p>
+            <div class="card-price-row">
+              <div class="card-price">
+                <span class="amount">199</span> <small>درهم</small>
+              </div>
+              <div class="card-old-price">329 درهم</div>
+              <span class="card-save-badge">3 أطقم بـ 199 د.م</span>
+            </div>
+            <button type="button" class="btn-select-product" data-select-product="spiderman">
+              <span>🛒 اختيار المقاس والمجموعة للطلب</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Interactive Active Product Showcase & Order Section -->
     <article class="product-showcase-card" id="product-section">
       
       <!-- Gallery Column -->
-      <section class="gallery-column" aria-label="معرض صور المنتج">
+      <section class="gallery-column" aria-label="معرض صور المنتج المختار">
         <div class="featured-img-wrap">
-          <img id="main-featured-image" src="images/trio-pack-1.jpeg" alt="طقم بيجامة سبايدرمان للأطفال - 3 أطقم" />
-          <span class="offer-tag">تخفيض 40% 🔥</span>
+          <img id="main-featured-image" src="images/coat-black.jpg" alt="صورة المنتج المختار" />
+          <span class="offer-tag" id="main-offer-tag">تخفيض خاص 🔥</span>
           <span class="free-ship-tag">🚚 توصيل مجاني</span>
         </div>
 
-        <!-- Thumbnails Strip (صور المجموعتين فقط) -->
-        <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور المجموعات">
-          <button type="button" class="thumb-btn active" data-img="images/trio-pack-1.jpeg" title="المجموعة 1: أسود + أزرق + رمادي">
-            <img src="images/trio-pack-1.jpeg" alt="المجموعة 1 (3 أطقم)" />
-            <span class="thumb-label">المجموعة 1</span>
-          </button>
-          <button type="button" class="thumb-btn" data-img="images/trio-pack-2.jpeg" title="المجموعة 2: أخضر + عنابي + بيج">
-            <img src="images/trio-pack-2.jpeg" alt="المجموعة 2 (3 أطقم)" />
-            <span class="thumb-label">المجموعة 2</span>
-          </button>
+        <!-- Thumbnails Strip (يتغير تلقائياً حسب المنتج المختار) -->
+        <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور ألوان المنتج المختار">
+          <!-- ديناميكي بواسطة الجافاسكربت -->
         </div>
       </section>
 
       <!-- Details & Order Form Column -->
-      <section class="details-column" aria-label="تفاصيل المنتج والطلب">
+      <section class="details-column" aria-label="تفاصيل المنتج واستمارة الطلب">
         
         <div>
-          <h2 class="product-title">طقم بيجامة سبايدرمان للأطفال (3 قطع قطنية فاخرة)</h2>
+          <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
+          <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي)</h2>
           <div class="reviews-summary">
             <span class="stars">★★★★★</span>
-            <span>5.0 (2,500+ تقييم إيجابي)</span>
+            <span id="active-product-reviews">4.9 (890+ تقييم إيجابي)</span>
             <span>•</span>
             <span style="color:#059669; font-weight:800;">متوفر في المخزون ✅</span>
           </div>
@@ -113,17 +253,17 @@
         <!-- Price Box -->
         <div class="price-box">
           <div class="price-current">
-            <span id="price-display">199</span> <small>درهم</small>
+            <span id="price-display">349</span> <small>درهم</small>
           </div>
-          <div class="price-old" id="old-price-display">329 درهم</div>
-          <span class="discount-pill" id="discount-display">وفر 130 درهم (40%)</span>
+          <div class="price-old" id="old-price-display">499 درهم</div>
+          <span class="discount-pill" id="discount-display">وفر 150 درهم</span>
         </div>
 
         <!-- Trust Capsules -->
         <div class="trust-row">
           <div class="trust-capsule">
             <span class="trust-icon">🚚</span>
-            <span>توصيل مجاني</span>
+            <span>توصيل مجاني 100%</span>
           </div>
           <div class="trust-capsule">
             <span class="trust-icon">💵</span>
@@ -131,71 +271,40 @@
           </div>
           <div class="trust-capsule">
             <span class="trust-icon">💯</span>
-            <span>قطن 100% ممتاز</span>
+            <span>معاينة قبل الدفع</span>
           </div>
         </div>
 
-        <!-- Size Selection (سنة حتى 10 سنوات) -->
+        <!-- Color Selector Group (يتغير ديناميكياً حسب المنتج) -->
         <div class="selector-group">
           <div class="selector-label">
-            <span>اختر السن المناسب:</span>
-            <span class="selected-value" id="selected-size-label">5 سنوات</span>
+            <span>اختر اللون المفضل:</span>
+            <span class="selected-value" id="selected-color-label">أسود ملكي</span>
+          </div>
+          <div class="color-options-wrap" id="color-options-wrap">
+            <!-- ديناميكي بواسطة الجافاسكربت -->
+          </div>
+        </div>
+
+        <!-- Size Selection Group (ديناميكي: مقاسات ملابس أو أعمار أطفال) -->
+        <div class="selector-group">
+          <div class="selector-label">
+            <span id="size-group-title">اختر المقاس المناسب:</span>
+            <span class="selected-value" id="selected-size-label">L</span>
           </div>
           <div class="size-pills" id="size-pills-wrap">
-            <button type="button" class="size-pill" data-size="سنة">سنة</button>
-            <button type="button" class="size-pill" data-size="سنتين">سنتين</button>
-            <button type="button" class="size-pill" data-size="3 سنوات">3 سنوات</button>
-            <button type="button" class="size-pill" data-size="4 سنوات">4 سنوات</button>
-            <button type="button" class="size-pill active" data-size="5 سنوات">5 سنوات</button>
-            <button type="button" class="size-pill" data-size="6 سنوات">6 سنوات</button>
-            <button type="button" class="size-pill" data-size="7 سنوات">7 سنوات</button>
-            <button type="button" class="size-pill" data-size="8 سنوات">8 سنوات</button>
-            <button type="button" class="size-pill" data-size="9 سنوات">9 سنوات</button>
-            <button type="button" class="size-pill" data-size="10 سنوات">10 سنوات</button>
+            <!-- ديناميكي بواسطة الجافاسكربت -->
           </div>
         </div>
 
-        <!-- Pack Selection Cards -->
+        <!-- Bundle / Offer Card Group -->
         <div class="selector-group">
           <div class="selector-label">
-            <span>اختر تشكيلة الألوان المفضلة:</span>
-            <span class="selected-value" id="selected-pack-label">المجموعة 1</span>
+            <span>باقة الطلب والعروض المتاحة:</span>
+            <span class="selected-value" id="selected-pack-label">الطلب الفردي (1 قطعة)</span>
           </div>
           <div class="pack-cards" id="pack-cards-wrap">
-            
-            <div class="pack-card active" data-pack="pack1" data-pack-name="المجموعة 1 (أسود + أزرق + رمادي)" data-pack-img="images/trio-pack-1.jpeg">
-              <div class="pack-card-info">
-                <span class="pack-radio"></span>
-                <div>
-                  <div class="pack-name">المجموعة 1 (3 أطقم)</div>
-                  <div class="pack-colors-sub">أسود + أزرق + رمادي</div>
-                </div>
-              </div>
-              <span class="pack-badge">الأكثر طلباً 🔥</span>
-            </div>
-
-            <div class="pack-card" data-pack="pack2" data-pack-name="المجموعة 2 (أخضر + عنابي + بيج)" data-pack-img="images/trio-pack-2.jpeg">
-              <div class="pack-card-info">
-                <span class="pack-radio"></span>
-                <div>
-                  <div class="pack-name">المجموعة 2 (3 أطقم)</div>
-                  <div class="pack-colors-sub">أخضر + عنابي + بيج</div>
-                </div>
-              </div>
-              <span class="pack-badge pack-badge-blue">تشكيلة مميزة ✨</span>
-            </div>
-
-            <div class="pack-card" data-pack="double" data-pack-name="العرض المزدوج (مجموعتين = 6 أطقم بـ 379 درهم)" data-pack-img="images/trio-pack-1.jpeg" data-is-double="true">
-              <div class="pack-card-info">
-                <span class="pack-radio"></span>
-                <div>
-                  <div class="pack-name">العرض المزدوج (6 أطقم)</div>
-                  <div class="pack-colors-sub">المجموعة 1 + المجموعة 2 بـ 379 درهم فقط</div>
-                </div>
-              </div>
-              <span class="pack-badge pack-badge-gold">أفضل توفير 💰</span>
-            </div>
-
+            <!-- ديناميكي بواسطة الجافاسكربت -->
           </div>
         </div>
 
@@ -277,7 +386,7 @@
 
                 <!-- شبكة جميع مدن المغرب بالترتيب الأبجدي -->
                 <div class="all-cities-grid-container" id="all-cities-container">
-                  <!-- سيتم تعبئتها بواسطة السكريبت بجميع مدن المغرب -->
+                  <!-- ديناميكي بواسطة الجافاسكربت -->
                 </div>
               </div>
               <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
@@ -290,10 +399,10 @@
 
             <div class="form-field">
               <label for="customer-note">ملاحظة إضافية (اختياري)</label>
-              <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال في المساء" />
+              <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
             </div>
 
-            <!-- Big Confirmation Button -->
+            <!-- Big Confirmation Button with ample margin to avoid overlapping -->
             <button type="submit" class="btn-submit-order" id="btn-submit-order">
               <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
               <span class="sub-text">الدفع عند الاستلام بعد معاينة المنتج • التوصيل مجاني 100%</span>
@@ -305,7 +414,7 @@
             </div>
 
             <!-- WhatsApp Direct Order Button -->
-            <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب%20طقم%20بيجامة%20سبايدرمان%20للأطفال" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
+            <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
               <span>💬</span>
               <span>طلب مباشر عبر الواتساب بنقرة واحدة</span>
             </a>
@@ -314,117 +423,292 @@
         </div>
 
       </section>
-
     </article>
 
     <!-- Why Choose Menara Store (Features & Benefits) -->
-    <section class="content-section" aria-label="مميزات البيجامة">
+    <section class="content-section" aria-label="مميزات متجر منارة">
       <h2 class="section-title">
         <span>⭐</span>
-        <span>علاش طقم بيجامة سبايدرمان هو الاختيار الأفضل لطفلك؟</span>
+        <span>لماذا يفضل أكثر من 5,000 زبون مغربي التسوق من متجر منارة؟</span>
       </h2>
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">🌿</div>
-          <h3>قطن 100% ممتاز وناعم</h3>
-          <p>قماش قطني طبيعي ولطيف على بشرة الأطفال الحساسة، لا يسبب أي حساسية أو حكة ويوفر الدفء والراحة القصوى طوال الليل.</p>
+          <h3>أقمشة وخامات أصلية 100%</h3>
+          <p>نختار أفضل أنسجة الصوف والقطن المريح المقاوم للبرد والمناسب للاستخدام اليومي دون تغير في الشكل أو اللون.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">🕷️</div>
-          <h3>رسومات سبايدرمان محبوبة وثابتة</h3>
-          <p>طباعة ثلاثية الأبعاد بألوان زاهية وجميلة يحبها كل طفل، متماسكة ولا تبهت أو تتشقق حتى بعد الغسيل المتكرر.</p>
+          <div class="benefit-icon">💵</div>
+          <h3>الدفع عند الاستلام بعد الفحص</h3>
+          <p>لا تدفع أي درهم مسبقاً! افتح الطرد، عاين الجودة والمقاس، ثم ادفع للموزع وأنت مرتاح البال تماماً.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">👕</div>
-          <h3>خياطة مغربية متينة ومتقنة</h3>
-          <p>أساور مطاطية مريحة في الأكمام وأسفل السروال تمنع تسرب الهواء البارد، مصممة لتحمل الحركة واللعب والنوم الهادئ.</p>
+          <div class="benefit-icon">🚚</div>
+          <h3>توصيل سريع مجاني لباب المنزل</h3>
+          <p>شبكة توزيع احترافية تغطي جميع مدن ومناطق المغرب خلال 24 إلى 48 ساعة فقط، والتوصيل دائماً بالمجان.</p>
         </div>
         <div class="benefit-card">
-          <div class="benefit-icon">📦</div>
-          <h3>3 أطقم في باقة واحدة</h3>
-          <p>3 أطقم كاملة بألوان مختلفة، توفر عليك شراء قطع منفصلة وتضمن أن طفلك يملك دائماً طقماً نظيفاً وجاهزاً للارتداء.</p>
+          <div class="benefit-icon">🔄</div>
+          <h3>ضمان الاستبدال الفوري</h3>
+          <p>إذا كان المقاس غير مناسب أو رغبت في تغيير اللون، نوفر لك خدمة استبدال سهلة وسريعة بدون أي تعقيد.</p>
         </div>
       </div>
     </section>
 
-    <!-- Real Photos of Each Color Individually (كل لون على حدة) -->
-    <section class="content-section" aria-label="صور كل لون على حدة">
-      <h2 class="section-title">
-        <span>📸</span>
-        <span>صور كل لون على حدة (المجموعة 1 والمجموعة 2)</span>
-      </h2>
+    <!-- =========================================================================
+         DETAILED ALL COLORS SHOWCASE SECTION (في الصور في الاسفل كلما منتوج لنفسه)
+         Here every color of every product is presented as its own dedicated card
+         ========================================================================= -->
+    <section class="content-section" id="store-all-colors-showcase" aria-label="معرض ألوان المنتجات التفصيلي">
+      <div class="section-header-box" style="margin-bottom: 22px;">
+        <div class="section-badge">📸 معرض التشكيلات والألوان الكاملة</div>
+        <h2 class="section-main-title">استعراض كل لون على حدة بالتفصيل</h2>
+        <p class="section-sub-title">اختر أي لون تريده بالضغط على زر "اطلب هذا اللون" للانتقال الفوري للطلب</p>
+      </div>
 
-      <!-- المجموعة 1: كل لون على حدة -->
+      <!-- تشكيلة المعاطف الرجالية الفاخرة -->
       <div class="colors-group-block">
         <div class="colors-group-header">
-          <span class="group-pill group-pill-1">المجموعة 1 (3 أطقم)</span>
-          <span class="group-subtitle">أسود + أزرق + رمادي</span>
+          <span class="group-pill group-pill-1">معاطف رجالية شتوية فاخرة</span>
+          <span class="group-subtitle">3 ألوان ملكية فاخرة بـ 349 درهم فقط</span>
         </div>
         <div class="individual-colors-grid">
+          
+          <!-- معطف أسود -->
           <div class="color-item-card">
             <div class="color-item-img">
-              <img src="images/pajama-black.jpeg" alt="بيجامة سبايدرمان باللون الأسود" loading="lazy" />
+              <img src="images/coat-black.jpg" alt="معطف رجالي كلاسيكي أسود ملكي" loading="lazy" />
+              <span class="color-card-badge">الأكثر فخامة 🔥</span>
             </div>
-            <div class="color-item-caption">
-              <span class="color-dot" style="background:#0f172a;"></span>
-              <span class="color-title">اللون الأسود</span>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#0f172a;"></span>
+                <span class="color-title">معطف رجالي - أسود ملكي</span>
+              </div>
+              <p class="color-item-desc">اللون الأسود الكلاسيكي الفخم، إطلالة راقية تلائم المناسبات الرسمية والعمل.</p>
+              <div class="color-item-footer">
+                <span class="color-card-price">349 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="coat" data-color-id="black">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
             </div>
           </div>
+
+          <!-- معطف رمادي -->
           <div class="color-item-card">
             <div class="color-item-img">
-              <img src="images/pajama-navy.jpeg" alt="بيجامة سبايدرمان باللون الأزرق" loading="lazy" />
+              <img src="images/coat-gray.jpg" alt="معطف رجالي رمادي أنيق" loading="lazy" />
+              <span class="color-card-badge" style="background:#475569;">أناقة عصرية ✨</span>
             </div>
-            <div class="color-item-caption">
-              <span class="color-dot" style="background:#1e3a8a;"></span>
-              <span class="color-title">اللون الأزرق</span>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#94a3b8;"></span>
+                <span class="color-title">معطف رجالي - رمادي أنيق</span>
+              </div>
+              <p class="color-item-desc">درجة رمادية عصرية متناسقة مع جميع الملابس، صوف كاشمير دافئ وملمس ناعم.</p>
+              <div class="color-item-footer">
+                <span class="color-card-price">349 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="coat" data-color-id="gray">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
             </div>
           </div>
+
+          <!-- معطف أزرق -->
           <div class="color-item-card">
             <div class="color-item-img">
-              <img src="images/pajama-gray.jpeg" alt="بيجامة سبايدرمان باللون الرمادي" loading="lazy" />
+              <img src="images/coat-blue.jpg" alt="معطف رجالي أزرق بترولي" loading="lazy" />
+              <span class="color-card-badge" style="background:#1e40af;">لون مميز وجذاب 💎</span>
             </div>
-            <div class="color-item-caption">
-              <span class="color-dot" style="background:#64748b;"></span>
-              <span class="color-title">اللون الرمادي</span>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#1e3a8a;"></span>
+                <span class="color-title">معطف رجالي - أزرق بترولي</span>
+              </div>
+              <p class="color-item-desc">أزرق ملكي أنيق وجريء يمنحك حضوراً متميزاً في فصل الشتاء.</p>
+              <div class="color-item-footer">
+                <span class="color-card-price">349 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="coat" data-color-id="blue">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- المجموعة 2: كل لون على حدة -->
+      <!-- تشكيلة أطقم بولو شتوية للأطفال (6 ألوان رخامية منفصلة) -->
       <div class="colors-group-block">
         <div class="colors-group-header">
-          <span class="group-pill group-pill-2">المجموعة 2 (3 أطقم)</span>
-          <span class="group-subtitle">أخضر + عنابي + بيج</span>
+          <span class="group-pill group-pill-2">أطقم بولو شتوية للأطفال (Polo Kids)</span>
+          <span class="group-subtitle">6 ألوان رخامية حصرية للأعمار من 2 إلى 12 سنة بـ 199 درهم</span>
+        </div>
+        <div class="individual-colors-grid individual-colors-grid-3cols">
+          
+          <!-- بولو أخضر رخامي -->
+          <div class="color-item-card">
+            <div class="color-item-img">
+              <img src="images/polo-green-marble.jpg" alt="طقم بولو أطفال أخضر رخامي" loading="lazy" />
+            </div>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#10b981;"></span>
+                <span class="color-title">طقم بولو - أخضر رخامي</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="green-marble">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- بولو بيج رخامي -->
+          <div class="color-item-card">
+            <div class="color-item-img">
+              <img src="images/polo-beige-marble.jpg" alt="طقم بولو أطفال بيج رخامي" loading="lazy" />
+            </div>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#d4b996;"></span>
+                <span class="color-title">طقم بولو - بيج رخامي</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="beige-marble">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- بولو رمادي رخامي -->
+          <div class="color-item-card">
+            <div class="color-item-img">
+              <img src="images/polo-gray-marble.jpg" alt="طقم بولو أطفال رمادي رخامي" loading="lazy" />
+            </div>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#64748b;"></span>
+                <span class="color-title">طقم بولو - رمادي رخامي</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="gray-marble">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- بولو تركواز رخامي -->
+          <div class="color-item-card">
+            <div class="color-item-img">
+              <img src="images/polo-turquoise-marble.jpg" alt="طقم بولو أطفال تركواز رخامي" loading="lazy" />
+            </div>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#06b6d4;"></span>
+                <span class="color-title">طقم بولو - تركواز رخامي</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="turquoise-marble">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- بولو فضي رخامي -->
+          <div class="color-item-card">
+            <div class="color-item-img">
+              <img src="images/polo-silver-marble.jpg" alt="طقم بولو أطفال فضي رخامي" loading="lazy" />
+            </div>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#cbd5e1;"></span>
+                <span class="color-title">طقم بولو - فضي رخامي</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="silver-marble">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- بولو موكا رخامي -->
+          <div class="color-item-card">
+            <div class="color-item-img">
+              <img src="images/polo-mocha-marble.jpg" alt="طقم بولو أطفال موكا رخامي" loading="lazy" />
+            </div>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#78350f;"></span>
+                <span class="color-title">طقم بولو - موكا رخامي</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم</span>
+                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="mocha-marble">
+                  <span>اطلب هذا اللون 🛍️</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- تشكيلة بيجامات سبايدرمان للأطفال -->
+      <div class="colors-group-block">
+        <div class="colors-group-header">
+          <span class="group-pill group-pill-gold">باقات بيجامات سبايدرمان للأطفال</span>
+          <span class="group-subtitle">3 أطقم كاملة قطن 100% بـ 199 درهم فقط</span>
         </div>
         <div class="individual-colors-grid">
+          
           <div class="color-item-card">
             <div class="color-item-img">
-              <img src="images/pajama-green.jpeg" alt="بيجامة سبايدرمان باللون الأخضر" loading="lazy" />
+              <img src="images/trio-pack-1.jpeg" alt="المجموعة 1 بيجامة سبايدرمان" loading="lazy" />
             </div>
-            <div class="color-item-caption">
-              <span class="color-dot" style="background:#047857;"></span>
-              <span class="color-title">اللون الأخضر</span>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#1e293b;"></span>
+                <span class="color-title">المجموعة 1 (أسود + أزرق + رمادي)</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم (3 أطقم)</span>
+                <button type="button" class="btn-pick-color" data-product="spiderman" data-color-id="pack1">
+                  <span>اطلب هذه المجموعة 🛍️</span>
+                </button>
+              </div>
             </div>
           </div>
+
           <div class="color-item-card">
             <div class="color-item-img">
-              <img src="images/pajama-burgundy.jpeg" alt="بيجامة سبايدرمان باللون العنابي" loading="lazy" />
+              <img src="images/trio-pack-2.jpeg" alt="المجموعة 2 بيجامة سبايدرمان" loading="lazy" />
             </div>
-            <div class="color-item-caption">
-              <span class="color-dot" style="background:#881337;"></span>
-              <span class="color-title">اللون العنابي</span>
+            <div class="color-item-info">
+              <div class="color-item-caption">
+                <span class="color-dot" style="background:#059669;"></span>
+                <span class="color-title">المجموعة 2 (أخضر + عنابي + بيج)</span>
+              </div>
+              <div class="color-item-footer">
+                <span class="color-card-price">199 درهم (3 أطقم)</span>
+                <button type="button" class="btn-pick-color" data-product="spiderman" data-color-id="pack2">
+                  <span>اطلب هذه المجموعة 🛍️</span>
+                </button>
+              </div>
             </div>
           </div>
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/pajama-beige.jpeg" alt="بيجامة سبايدرمان باللون البيج" loading="lazy" />
-            </div>
-            <div class="color-item-caption">
-              <span class="color-dot" style="background:#d4b996;"></span>
-              <span class="color-title">اللون البيج</span>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
@@ -439,88 +723,69 @@
         
         <div class="review-card">
           <div class="review-header">
-            <span class="reviewer-name">فاطمة الزهراء (الدار البيضاء)</span>
+            <span class="reviewer-name">سفيان العلمي (الدار البيضاء)</span>
             <span class="review-stars">★★★★★</span>
           </div>
-          <p class="review-text">"صراحة التوب ديالهم واعر قطن خالص وغليض شوية للبرد، ولدي حماق على سبايدرمان مابغاش يحيدها. التوصيل كان سريع فـ 24 ساعة تبارك الله عليكم."</p>
+          <p class="review-text">"المونطو الرمادي صراحة فاق كل التوقعات! خامة ثقيلة ممتازة صوف دافئ وقصّة ملكية معتبرة. التوصيل كان فـ 24 ساعة لعين الذياب والدفع بعد ما شفت البياسة، تبارك الله عليكم."</p>
           <span class="review-city">تم التحقق من الشراء ✅</span>
         </div>
 
         <div class="review-card">
           <div class="review-header">
-            <span class="reviewer-name">سعيد المرابط (الرباط)</span>
+            <span class="reviewer-name">سناء المرابط (طنجة)</span>
             <span class="review-stars">★★★★★</span>
           </div>
-          <p class="review-text">"الثمن مناسب بزاف مقارنة مع المحلات، 3 دالبيجامات بـ 199 درهم وتوصيل فابور حتى للدار، السلعة نقية والخياطة مفينية مزيان. شكرا متجر منارة."</p>
+          <p class="review-text">"خديت لولدي طقم بولو الأخضر الرخامي، التوب قطن غليض ورطب بزاف وسخون للبرد. حتى الرسمة والتطريز د رالف لورين نقي بزاف مابغاش يحيدو. شكراً متجر منارة على المعاملة الطيبة."</p>
           <span class="review-city">تم التحقق من الشراء ✅</span>
         </div>
 
         <div class="review-card">
           <div class="review-header">
-            <span class="reviewer-name">مريم العمراني (مراكش)</span>
+            <span class="reviewer-name">يوسف بنجلون (مراكش)</span>
             <span class="review-stars">★★★★★</span>
           </div>
-          <p class="review-text">"المقاس جاء مضبوط تماما لولدي عندو 5 سنين وخديت ليه 4-5. غسلتهم جوج مرات وبقاو فلونهم ماتكمشوش. تعامل راقي ومعاينة قبل الأداء."</p>
-          <span class="review-city">تم التحقق من الشراء ✅</span>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-name">حميد التازي (فاس)</span>
-            <span class="review-stars">★★★★★</span>
-          </div>
-          <p class="review-text">"خدمة احترافية، اتصل بيا الموزع فالموعد وحليت الكولية شفت البيجامات عاد خلصت، هادشي لي كيبين المصداقية ديالكم. غانعاود نطلب للمرة الثانية."</p>
+          <p class="review-text">"خديت المعطف الأسود، أنيق جداً كيجي راقي فـ الخدمة والمناسبات. القياس جا هو هاداك تماماً. خدمة التوصيل محترمة والموزع اتصل بيا قبل ما يوصل. كنصح بالتعامل معهم."</p>
           <span class="review-city">تم التحقق من الشراء ✅</span>
         </div>
 
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Accordion -->
     <section class="content-section" aria-label="الأسئلة الشائعة">
       <h2 class="section-title">
         <span>❓</span>
-        <span>الأسئلة الأكثر تكراراً (FAQ)</span>
+        <span>الأسئلة الشائعة حول متجر منارة</span>
       </h2>
       <div class="faq-list">
         
-        <div class="faq-item open">
+        <div class="faq-item">
           <button type="button" class="faq-question">
-            <span>كيفاش كتتم عملية الدفع والتسليم؟</span>
-            <span class="toggle-icon">▾</span>
+            <span>كيف تتم عملية الطلب والدفع؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            الدفع كيكون نقداً عند الاستلام فقط (Cash On Delivery)، يعني كيوصلك الموزع للعنوان ديالك، كتقلب السلعة وتتأكد منها عاد كتخلص.
+            <p>العملية بسيطة جداً وبدون أي تعقيد: املأ الاستمارة أعلاه باسمك ورقم هاتفك ومدينتك واضغط "تأكيد الطلب". سنتصل بك هاتفياً لتأكيد التفاصيل، ثم نرسل طلبيتك مع الموزع. لا تدفع أي درهم حتى تستلم طردك وتعاينه بيدك!</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question">
-            <span>شحال كياخد التوصيل من وقت؟</span>
-            <span class="toggle-icon">▾</span>
+            <span>هل التوصيل مجاني حقاً وإلى أي مدن؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            التوصيل سريع جداً، كياخد من 24 إلى 48 ساعة كحد أقصى لجميع مدن وقرى المغرب.
+            <p>نعم! التوصيل مجاني 100% لباب منزلك أو مكان عملك في جميع مدن وقرى ومناطق المغرب بدون أي مصاريف شحن إضافية.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <button type="button" class="faq-question">
-            <span>واش التوصيل بالمجان بصح؟</span>
-            <span class="toggle-icon">▾</span>
+            <span>ماذا لو كان المقاس غير مناسب بعد الاستلام؟</span>
+            <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            نعم، التوصيل مجاني 100% لباب دارك بدون أي درهم إضافي على ثمن العرض المعروض.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>إلى ما جاش المقاس قد ولدي شنو ندير؟</span>
-            <span class="toggle-icon">▾</span>
-          </button>
-          <div class="faq-answer">
-            كنوفرو ليك إمكانية الاستبدال بكل سهولة ومجاناً، فقط تواصل معنا عبر الواتساب وفريق خدمة الزبناء غايبدل ليك المقاس فورا.
+            <p>رضاكم هو أولويتنا الأولى. إذا كان المقاس صغيراً أو كبيراً، نوفر لك خدمة استبدال المقاس أو اللون مجاناً وسريعاً عبر التواصل معنا على الواتساب.</p>
           </div>
         </div>
 
@@ -529,38 +794,45 @@
 
   </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div style="display:flex; align-items:center; gap:8px;">
-      <img src="images/menara-logo.jpg" alt="متجر منارة" style="width:28px; height:28px; border-radius:50%;" />
-      <strong>متجر منارة المغربي • MENARA STORE</strong>
+  <!-- Store Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <img src="images/menara-logo.jpg" alt="متجر منارة" class="footer-logo" />
+        <div>
+          <h3>متجر منارة • MENARA STORE</h3>
+          <p>وجهتكم الأولى للأزياء والأناقة والموضة في المغرب 🇲🇦</p>
+        </div>
+      </div>
+      <div class="footer-badges">
+        <span>🔒 تسوق آمن 100%</span>
+        <span>🚚 شحن سريع لجميع المدن</span>
+        <span>💵 دفع عند الاستلام</span>
+      </div>
+      <div class="footer-copy">
+        <p>© 2026 متجر منارة (Menara Store). جميع الحقوق محفوظة.</p>
+      </div>
     </div>
-    <p>جميع الحقوق محفوظة © 2026 • للتواصل وخدمة الزبناء: 0710054951</p>
   </footer>
 
-  <!-- Mobile Sticky Bottom Order Bar -->
+  <!-- Mobile Sticky Bottom Bar -->
   <aside class="mobile-sticky-bar" id="mobile-sticky-bar" aria-label="شريط الطلب السريع">
-    <div class="msb-price">
-      <span style="font-size:10px; color:#64748b; font-weight:800;">3 أطقم بـ</span>
-      <strong><span id="msb-price-val">199</span> درهم</strong>
+    <div class="msb-info">
+      <span class="msb-label" id="msb-product-label">معطف رجالي فاخر</span>
+      <span class="msb-price"><span id="msb-price-val">349</span> درهم</span>
     </div>
-    <a href="#order-form-container" class="msb-btn" id="msb-order-btn">
-      <span>اطلب الآن 🛍️</span>
-    </a>
+    <button type="button" class="msb-btn" id="msb-order-btn">
+      <span>🛒 اطلب الآن (توصيل مجاني)</span>
+    </button>
   </aside>
 
   <!-- Order Success Modal -->
-  <div class="order-success-modal" id="order-success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="success-card">
-      <div class="success-icon-wrap">✓</div>
-      <h3 id="modal-title" style="font-size:20px; font-weight:900; color:#0f172a;">تم تسجيل طلبك بنجاح! 🎉</h3>
-      <p style="font-size:13.5px; color:#475569; line-height:1.6;">
-        شكراً لثقتكم بمتجر منارة. رقم طلبيتكم هو:
-      </p>
-      <div class="success-order-id" id="modal-order-id">#123456</div>
-      <p style="font-size:13px; color:#64748b;">
-        سيتصل بكم الموزع قريباً لتأكيد موعد التسليم. يمكنك أيضاً تأكيد الطلب فوراً عبر الواتساب:
-      </p>
+  <div class="modal-overlay" id="order-success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <div class="modal-icon">🎉</div>
+      <h3 id="modal-title">تم استلام طلبك بنجاح!</h3>
+      <p class="modal-msg">شكراً لثقتكم في متجر منارة. رقم طلبكم هو: <strong id="modal-order-id" style="color:#059669;">#------</strong></p>
+      <p style="font-size:12.5px; color:#64748b; margin-bottom:12px;">سيتصل بكم فريق خدمة الزبناء قريباً لتأكيد تفاصيل الشحن والتوصيل المجاني لباب منزلكم.</p>
       
       <a href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="modal-whatsapp-btn" style="margin-top:6px;">
         <span>💬</span>
@@ -574,6 +846,6 @@
   </div>
 
   <!-- Main JavaScript Logic -->
-  <script src="script.js?v=20261029v10"></script>
+  <script src="script.js?v=20261102v1"></script>
 </body>
 </html>

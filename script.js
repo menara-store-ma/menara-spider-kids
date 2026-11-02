@@ -1,5 +1,5 @@
 /* =========================================================
-   MENARA STORE — CLEAN MOROCCAN COD SCRIPT
+   MENARA STORE — MULTI-PRODUCT E-COMMERCE COD SCRIPT
    High-converting, zero-lag Moroccan COD interactions
    ========================================================= */
 
@@ -7,33 +7,160 @@
   "use strict";
 
   const CONFIG = {
-    PRODUCT_NAME: "طقم بيجامة سبايدرمان للأطفال",
-    BASE_PRICE: 199,
-    BASE_OLD_PRICE: 329,
-    DOUBLE_PACK_PRICE: 379,
-    DOUBLE_PACK_OLD_PRICE: 658,
     WHATSAPP: "212710054951",
     GOOGLE_SHEET_WEBHOOK: "https://script.google.com/macros/s/AKfycbwVTa6dj32XVpKt17VV9GtITF8sUxNIGi9G9LRpP2WRgFpGm_jVqb_2zOmNb2FOn1NfiQ/exec",
     STORAGE_KEY_ORDERS: "menara_orders_cache",
   };
 
-  // State
+  /* ---------------- Products Catalog Data ---------------- */
+  const PRODUCTS = {
+    coat: {
+      id: "coat",
+      category: "men",
+      name: "معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)",
+      shortName: "معطف رجالي فاخر",
+      kicker: "🧥 أزياء رجالية فاخرة",
+      basePrice: 349,
+      baseOldPrice: 499,
+      doublePrice: 649, // توفير إضافي لمعطفين
+      doubleOldPrice: 998,
+      reviews: "4.9 (890+ تقييم إيجابي)",
+      sizeLabel: "اختر المقاس المناسب:",
+      defaultSize: "L",
+      sizes: ["M", "L", "XL", "XXL", "3XL"],
+      colors: [
+        { id: "black", name: "أسود ملكي", hex: "#0f172a", img: "images/coat-black.jpg", badge: "الأكثر طلباً" },
+        { id: "gray", name: "رمادي أنيق", hex: "#94a3b8", img: "images/coat-gray.jpg", badge: "أناقة عصرية" },
+        { id: "blue", name: "أزرق بترولي", hex: "#1e3a8a", img: "images/coat-blue.jpg", badge: "لون مميز" },
+      ],
+      packs: [
+        {
+          id: "pack1",
+          name: "معطف واحد (1 قطعة)",
+          badge: "الخيار المفضل 👍",
+          isDouble: false,
+          desc: "معطف كاشمير فاخر واحد باللون والمقاس المختار مع توصيل مجاني",
+          piecesCount: 1,
+        },
+        {
+          id: "pack2",
+          name: "عرض معطفين (2 قطع - خصم خاص)",
+          badge: "وفر 50 د.م إضافية 🔥",
+          isDouble: true,
+          desc: "احصل على معطفين بألوان أو مقاسات من اختيارك بسعر مخفض 649 درهم",
+          piecesCount: 2,
+        },
+      ],
+    },
+    polo: {
+      id: "polo",
+      category: "polo",
+      name: "طقم بولو شتوي فاخر للأطفال (Polo Kids)",
+      shortName: "طقم بولو للأطفال",
+      kicker: "👕 ملابس أطفال راقية",
+      basePrice: 199,
+      baseOldPrice: 299,
+      doublePrice: 369, // طقمين بـ 369
+      doubleOldPrice: 598,
+      reviews: "5.0 (1,450+ تقييم إيجابي)",
+      sizeLabel: "اختر عمر الطفل (المقاس):",
+      defaultSize: "6 سنوات",
+      sizes: [
+        "2 سنوات", "3 سنوات", "4 سنوات", "5 سنوات", "6 سنوات",
+        "7 سنوات", "8 سنوات", "9 سنوات", "10 سنوات", "11 سنة", "12 سنة"
+      ],
+      colors: [
+        { id: "green-marble", name: "أخضر رخامي", hex: "#10b981", img: "images/polo-green-marble.jpg", badge: "جديد 2026" },
+        { id: "beige-marble", name: "بيج رخامي", hex: "#d4b996", img: "images/polo-beige-marble.jpg", badge: "راقي وجذاب" },
+        { id: "gray-marble", name: "رمادي رخامي", hex: "#64748b", img: "images/polo-gray-marble.jpg", badge: "عملي ومميز" },
+        { id: "turquoise-marble", name: "تركواز رخامي", hex: "#06b6d4", img: "images/polo-turquoise-marble.jpg", badge: "لون زاهي" },
+        { id: "silver-marble", name: "فضي رخامي", hex: "#cbd5e1", img: "images/polo-silver-marble.jpg", badge: "عصري وأنيق" },
+        { id: "mocha-marble", name: "موكا رخامي", hex: "#78350f", img: "images/polo-mocha-marble.jpg", badge: "دافئ وفخم" },
+      ],
+      packs: [
+        {
+          id: "pack1",
+          name: "طقم واحد (جاكيت كابيشون + بنطلون)",
+          badge: "الخيار القياسي 👍",
+          isDouble: false,
+          desc: "طقم رياضي شتوي كامل مبطن بقطن دافئ فائق النعومة",
+          piecesCount: 2,
+        },
+        {
+          id: "pack2",
+          name: "عرض طقمين بولو (4 قطع كاملة)",
+          badge: "وفر 30 د.م إضافية 💥",
+          isDouble: true,
+          desc: "احصل على طقمين للأطفال بألوان رخامية مختلفة بـ 369 درهم فقط",
+          piecesCount: 4,
+        },
+      ],
+    },
+    spiderman: {
+      id: "spiderman",
+      category: "pajama",
+      name: "طقم بيجامة سبايدرمان للأطفال (باقة 3 أطقم)",
+      shortName: "بيجامة سبايدرمان للأطفال",
+      kicker: "🕷️ بيجامات أطفال شتوية",
+      basePrice: 199,
+      baseOldPrice: 329,
+      doublePrice: 379, // باقتين (6 أطقم)
+      doubleOldPrice: 658,
+      reviews: "5.0 (2,500+ تقييم إيجابي)",
+      sizeLabel: "اختر عمر الطفل (المقاس):",
+      defaultSize: "5 سنوات",
+      sizes: [
+        "سنة واحدة", "سنتين", "3 سنوات", "4 سنوات", "5 سنوات",
+        "6 سنوات", "7 سنوات", "8 سنوات", "9 سنوات", "10 سنوات"
+      ],
+      colors: [
+        { id: "pack1", name: "المجموعة 1 (أسود + أزرق + رمادي)", hex: "#1e293b", img: "images/trio-pack-1.jpeg", badge: "المجموعة 1" },
+        { id: "pack2", name: "المجموعة 2 (أخضر + عنابي + بيج)", hex: "#059669", img: "images/trio-pack-2.jpeg", badge: "المجموعة 2" },
+      ],
+      packs: [
+        {
+          id: "pack1",
+          name: "باقة 3 أطقم كاملة (199 درهم)",
+          badge: "3 أطقم بـ 199 د.م 🔥",
+          isDouble: false,
+          desc: "باقة كاملة تشمل 3 أطقم قطنية بيجامة سبايدرمان بألوان منوعة",
+          piecesCount: 3,
+        },
+        {
+          id: "pack2",
+          name: "العرض المزدوج (6 أطقم كاملة بـ 379 درهم)",
+          badge: "وفر 279 د.م الأكبر 💥",
+          isDouble: true,
+          desc: "المجموعتين معاً: 6 أطقم كاملة لكل فصول الشتاء بسعر 379 درهم فقط",
+          piecesCount: 6,
+        },
+      ],
+    },
+  };
+
+  /* ---------------- State ---------------- */
   const state = {
-    selectedSize: "5 سنوات",
-    selectedPack: "pack1",
-    selectedPackName: "المجموعة 1 (أسود + أزرق + رمادي)",
-    isDoublePack: false,
+    currentProductId: "coat",
+    selectedColorId: "black",
+    selectedColorName: "أسود ملكي",
+    selectedSize: "L",
+    selectedPackId: "pack1",
+    selectedPackName: "معطف واحد (1 قطعة)",
+    isDouble: false,
     quantity: 1,
     submitting: false,
     checkoutTracked: false,
   };
 
-  // DOM Elements
+  /* ---------------- DOM Helpers ---------------- */
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
   const mainFeaturedImage = $("#main-featured-image");
   const thumbnailsContainer = $("#thumbnails-container");
+  const colorOptionsWrap = $("#color-options-wrap");
+  const selectedColorLabel = $("#selected-color-label");
+  const sizeGroupTitle = $("#size-group-title");
   const sizePillsWrap = $("#size-pills-wrap");
   const selectedSizeLabel = $("#selected-size-label");
   const packCardsWrap = $("#pack-cards-wrap");
@@ -62,13 +189,14 @@
 
   /* ---------------- Price Calculations ---------------- */
   function calculateTotal() {
-    const unitPrice = state.isDoublePack ? CONFIG.DOUBLE_PACK_PRICE : CONFIG.BASE_PRICE;
-    const unitOldPrice = state.isDoublePack ? CONFIG.DOUBLE_PACK_OLD_PRICE : CONFIG.BASE_OLD_PRICE;
+    const prod = PRODUCTS[state.currentProductId] || PRODUCTS.coat;
+    const unitPrice = state.isDouble ? prod.doublePrice : prod.basePrice;
+    const unitOldPrice = state.isDouble ? prod.doubleOldPrice : prod.baseOldPrice;
     const total = unitPrice * state.quantity;
     const oldTotal = unitOldPrice * state.quantity;
     const savings = oldTotal - total;
     const percent = Math.round((savings / oldTotal) * 100);
-    return { unitPrice, total, oldTotal, savings, percent };
+    return { unitPrice, total, oldTotal, savings, percent, prod };
   }
 
   function updatePriceUI() {
@@ -81,34 +209,206 @@
     updateWhatsAppDirectLink();
   }
 
-  /* ---------------- Gallery Thumbnails ---------------- */
-  function initGallery() {
-    if (!thumbnailsContainer || !mainFeaturedImage) return;
+  /* ---------------- WhatsApp Direct Link ---------------- */
+  function updateWhatsAppDirectLink() {
+    if (!btnDirectWhatsapp) return;
+    const { total, prod } = calculateTotal();
+    const customer = (customerName && customerName.value.trim()) || "زبون متجر منارة";
+    const msg = `سلام عليكم متجر منارة، بغيت نطلب ${prod.name} (اللون: ${state.selectedColorName} - المقاس: ${state.selectedSize} - الباقة: ${state.selectedPackName} - الكمية: ${state.quantity}) بمبلغ إجمالي ${total} درهم مع التوصيل المجاني. الاسم: ${customer}.`;
+    btnDirectWhatsapp.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(msg)}`;
+  }
 
-    thumbnailsContainer.addEventListener("click", (e) => {
-      const btn = e.target.closest(".thumb-btn");
-      if (!btn) return;
-      const targetImg = btn.getAttribute("data-img");
-      if (!targetImg) return;
+  /* ---------------- Render Dynamic Product UI ---------------- */
+  function renderProductUI() {
+    const prod = PRODUCTS[state.currentProductId] || PRODUCTS.coat;
 
-      $$(".thumb-btn").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
+    // 1. Update text headers
+    const kickerEl = $("#active-product-kicker");
+    const titleEl = $("#active-product-title");
+    const reviewsEl = $("#active-product-reviews");
+    if (kickerEl) kickerEl.textContent = prod.kicker;
+    if (titleEl) titleEl.textContent = prod.name;
+    if (reviewsEl) reviewsEl.textContent = prod.reviews;
+    if (sizeGroupTitle) sizeGroupTitle.textContent = prod.sizeLabel;
 
-      mainFeaturedImage.style.opacity = "0.4";
-      setTimeout(() => {
-        mainFeaturedImage.src = targetImg;
-        mainFeaturedImage.style.opacity = "1";
-      }, 100);
+    // 2. Render Color Swatches
+    if (colorOptionsWrap) {
+      colorOptionsWrap.innerHTML = prod.colors.map((c) => {
+        const isActive = c.id === state.selectedColorId;
+        return `
+          <button type="button" class="color-swatch-btn ${isActive ? "active" : ""}" data-color-id="${c.id}" data-color-name="${c.name}" data-img="${c.img}">
+            <span class="swatch-circle" style="background-color: ${c.hex};"></span>
+            <span class="swatch-name">${c.name}</span>
+          </button>
+        `;
+      }).join("");
+    }
 
-      // مزامنة تلقائية مع اختيار الباقة
-      if (targetImg.includes("trio-pack-1")) {
-        const p1Card = $('.pack-card[data-pack="pack1"]');
-        if (p1Card && !p1Card.classList.contains("active")) p1Card.click();
-      } else if (targetImg.includes("trio-pack-2")) {
-        const p2Card = $('.pack-card[data-pack="pack2"]');
-        if (p2Card && !p2Card.classList.contains("active")) p2Card.click();
+    // 3. Render Gallery Thumbnails
+    if (thumbnailsContainer) {
+      thumbnailsContainer.innerHTML = prod.colors.map((c) => {
+        const isActive = c.id === state.selectedColorId;
+        return `
+          <button type="button" class="thumb-btn ${isActive ? "active" : ""}" data-img="${c.img}" data-color-id="${c.id}">
+            <img src="${c.img}" alt="${c.name}" loading="lazy" />
+          </button>
+        `;
+      }).join("");
+    }
+
+    // 4. Render Size Pills
+    if (sizePillsWrap) {
+      sizePillsWrap.innerHTML = prod.sizes.map((s) => {
+        const isActive = s === state.selectedSize;
+        return `
+          <button type="button" class="size-pill ${isActive ? "active" : ""}" data-size="${s}">
+            <span>${s}</span>
+          </button>
+        `;
+      }).join("");
+    }
+
+    // 5. Render Pack Cards
+    if (packCardsWrap) {
+      packCardsWrap.innerHTML = prod.packs.map((pk) => {
+        const isActive = pk.id === state.selectedPackId;
+        const packPrice = pk.isDouble ? prod.doublePrice : prod.basePrice;
+        const packOldPrice = pk.isDouble ? prod.doubleOldPrice : prod.baseOldPrice;
+        return `
+          <div class="pack-card ${isActive ? "active" : ""}" data-pack-id="${pk.id}" data-is-double="${pk.isDouble}">
+            <div class="pack-badge">${pk.badge}</div>
+            <div class="pack-content">
+              <span class="pack-radio-circle"></span>
+              <div class="pack-text">
+                <div class="pack-title">${pk.name}</div>
+                <div class="pack-sub">${pk.desc}</div>
+              </div>
+            </div>
+            <div class="pack-pricing">
+              <span class="pack-price">${packPrice} د.م</span>
+              <span class="pack-old">${packOldPrice} د.م</span>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // 6. Update Labels
+    if (selectedColorLabel) selectedColorLabel.textContent = state.selectedColorName;
+    if (selectedSizeLabel) selectedSizeLabel.textContent = state.selectedSize;
+    if (selectedPackLabel) selectedPackLabel.textContent = state.selectedPackName;
+
+    // 7. Update Main Image
+    const curColor = prod.colors.find((c) => c.id === state.selectedColorId) || prod.colors[0];
+    if (mainFeaturedImage && curColor) {
+      mainFeaturedImage.src = curColor.img;
+      mainFeaturedImage.alt = `${prod.name} - ${curColor.name}`;
+    }
+
+    // 8. Update Active State in Catalog Cards
+    $$(".store-product-card").forEach((card) => {
+      const pid = card.getAttribute("data-product-id");
+      if (pid === state.currentProductId) {
+        card.classList.add("active");
+      } else {
+        card.classList.remove("active");
       }
     });
+
+    updatePriceUI();
+  }
+
+  /* ---------------- Switch Product ---------------- */
+  function switchProduct(productId, colorId, size) {
+    if (!PRODUCTS[productId]) return;
+    state.currentProductId = productId;
+    const prod = PRODUCTS[productId];
+
+    // Pick color
+    if (colorId && prod.colors.some((c) => c.id === colorId)) {
+      state.selectedColorId = colorId;
+      state.selectedColorName = prod.colors.find((c) => c.id === colorId).name;
+    } else {
+      state.selectedColorId = prod.colors[0].id;
+      state.selectedColorName = prod.colors[0].name;
+    }
+
+    // Pick size
+    if (size && prod.sizes.includes(size)) {
+      state.selectedSize = size;
+    } else {
+      state.selectedSize = prod.defaultSize || prod.sizes[0];
+    }
+
+    // Reset pack to pack1 (single)
+    state.selectedPackId = "pack1";
+    state.selectedPackName = prod.packs[0].name;
+    state.isDouble = false;
+
+    renderProductUI();
+  }
+
+  /* ---------------- Select Color ---------------- */
+  function selectColor(colorId) {
+    const prod = PRODUCTS[state.currentProductId];
+    if (!prod) return;
+    const found = prod.colors.find((c) => c.id === colorId);
+    if (!found) return;
+
+    state.selectedColorId = found.id;
+    state.selectedColorName = found.name;
+    if (selectedColorLabel) selectedColorLabel.textContent = found.name;
+
+    // Update main image with smooth transition
+    if (mainFeaturedImage) {
+      mainFeaturedImage.style.opacity = "0.4";
+      setTimeout(() => {
+        mainFeaturedImage.src = found.img;
+        mainFeaturedImage.alt = `${prod.name} - ${found.name}`;
+        mainFeaturedImage.style.opacity = "1";
+      }, 100);
+    }
+
+    // Update active thumbnail
+    $$("#thumbnails-container .thumb-btn").forEach((btn) => {
+      if (btn.getAttribute("data-color-id") === colorId) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    // Update active swatch
+    $$("#color-options-wrap .color-swatch-btn").forEach((btn) => {
+      if (btn.getAttribute("data-color-id") === colorId) {
+        btn.classList.add("active");
+      } else {
+        btn.classList.remove("active");
+      }
+    });
+
+    updateWhatsAppDirectLink();
+  }
+
+  /* ---------------- Color Swatch & Thumbnail Events ---------------- */
+  function initColorAndGalleryControls() {
+    if (colorOptionsWrap) {
+      colorOptionsWrap.addEventListener("click", (e) => {
+        const btn = e.target.closest(".color-swatch-btn");
+        if (!btn) return;
+        const colorId = btn.getAttribute("data-color-id");
+        if (colorId) selectColor(colorId);
+      });
+    }
+
+    if (thumbnailsContainer) {
+      thumbnailsContainer.addEventListener("click", (e) => {
+        const btn = e.target.closest(".thumb-btn");
+        if (!btn) return;
+        const colorId = btn.getAttribute("data-color-id");
+        if (colorId) selectColor(colorId);
+      });
+    }
   }
 
   /* ---------------- Size Selector ---------------- */
@@ -119,7 +419,7 @@
       const pill = e.target.closest(".size-pill");
       if (!pill) return;
 
-      $$(".size-pill").forEach((p) => p.classList.remove("active"));
+      $$("#size-pills-wrap .size-pill").forEach((p) => p.classList.remove("active"));
       pill.classList.add("active");
 
       state.selectedSize = pill.getAttribute("data-size") || pill.textContent.trim();
@@ -137,32 +437,25 @@
       const card = e.target.closest(".pack-card");
       if (!card) return;
 
-      $$(".pack-card").forEach((c) => c.classList.remove("active"));
+      $$("#pack-cards-wrap .pack-card").forEach((c) => c.classList.remove("active"));
       card.classList.add("active");
 
-      state.selectedPack = card.getAttribute("data-pack") || "pack1";
-      state.selectedPackName = card.getAttribute("data-pack-name") || "المجموعة 1";
-      state.isDoublePack = card.getAttribute("data-is-double") === "true";
+      const packId = card.getAttribute("data-pack-id");
+      const isDouble = card.getAttribute("data-is-double") === "true";
+      const prod = PRODUCTS[state.currentProductId];
+      const packObj = prod.packs.find((pk) => pk.id === packId) || prod.packs[0];
 
-      const packImg = card.getAttribute("data-pack-img");
-      if (packImg && mainFeaturedImage) {
-        mainFeaturedImage.src = packImg;
-        const matchingThumb = $$(".thumb-btn").find((b) => b.getAttribute("data-img") === packImg);
-        if (matchingThumb) {
-          $$(".thumb-btn").forEach((b) => b.classList.remove("active"));
-          matchingThumb.classList.add("active");
-        }
-      }
+      state.selectedPackId = packId;
+      state.selectedPackName = packObj.name;
+      state.isDouble = isDouble;
 
-      if (selectedPackLabel) {
-        selectedPackLabel.textContent = state.isDoublePack ? "العرض المزدوج (6 أطقم)" : (state.selectedPack === "pack2" ? "المجموعة 2" : "المجموعة 1");
-      }
+      if (selectedPackLabel) selectedPackLabel.textContent = packObj.name;
 
       updatePriceUI();
     });
   }
 
-  /* ---------------- Quantity Buttons ---------------- */
+  /* ---------------- Quantity Controls ---------------- */
   function initQuantityControls() {
     if (!btnQtyMinus || !btnQtyPlus || !qtyInput) return;
 
@@ -183,12 +476,92 @@
     });
   }
 
+  /* ---------------- Category Filter Tabs ---------------- */
+  function initCategoryTabs() {
+    const tabs = $$(".store-nav-bar .nav-tab");
+    const cards = $$(".store-catalog-section .store-product-card");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const category = tab.getAttribute("data-category");
+
+        cards.forEach((card) => {
+          const cardId = card.getAttribute("data-product-id");
+          const prod = PRODUCTS[cardId];
+          if (!prod) return;
+
+          if (category === "all" || prod.category === category) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // If specific category is picked, auto switch to that product
+        if (category === "men") {
+          switchProduct("coat");
+        } else if (category === "polo") {
+          switchProduct("polo");
+        } else if (category === "pajama") {
+          switchProduct("spiderman");
+        }
+      });
+    });
+  }
+
+  /* ---------------- Catalog Select Buttons ---------------- */
+  function initCatalogButtons() {
+    $$("[data-select-product]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const prodId = btn.getAttribute("data-select-product");
+        if (prodId && PRODUCTS[prodId]) {
+          switchProduct(prodId);
+          const showcase = $("#product-section");
+          if (showcase) {
+            showcase.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+    });
+  }
+
+  /* ---------------- Bottom All Colors Showcase Pick Buttons ---------------- */
+  function initAllColorsButtons() {
+    $$(".btn-pick-color").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const prodId = btn.getAttribute("data-product");
+        const colorId = btn.getAttribute("data-color-id");
+
+        if (prodId && PRODUCTS[prodId]) {
+          switchProduct(prodId, colorId);
+
+          const formBox = $("#order-form-container");
+          if (formBox) {
+            formBox.scrollIntoView({ behavior: "smooth", block: "start" });
+            if (customerName) {
+              setTimeout(() => {
+                customerName.focus();
+                formBox.classList.add("highlight-form-pulse");
+                setTimeout(() => formBox.classList.remove("highlight-form-pulse"), 1200);
+              }, 450);
+            }
+          }
+        }
+      });
+    });
+  }
+
   /* ---------------- Countdown Timer ---------------- */
   function initCountdownTimer() {
     if (!topTimer) return;
 
-    let totalSeconds = 14 * 60 + 32; // 14 mins 32 secs
-    const timerKey = "menara_timer_end";
+    let totalSeconds = 14 * 60 + 32;
+    const timerKey = "menara_store_timer_end";
     const savedEnd = localStorage.getItem(timerKey);
     const now = Date.now();
 
@@ -258,7 +631,6 @@
 
     if (!citiesDropdownPanel || !allCitiesContainer || !cityInput) return;
 
-    // Build the alphabetical cities list
     allCitiesContainer.innerHTML = MOROCCAN_CITIES.map((c) => {
       return `<button type="button" class="city-item-btn" data-city="${c}">${c}</button>`;
     }).join("");
@@ -302,14 +674,12 @@
       closeCities();
     });
 
-    // Close when clicking outside
     document.addEventListener("click", (e) => {
       if (cityFieldWrap && !cityFieldWrap.contains(e.target)) {
         closeCities();
       }
     });
 
-    // Selecting a city from items or popular chips
     citiesDropdownPanel.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-city]");
       if (!btn) return;
@@ -326,7 +696,6 @@
       }
     });
 
-    // Filter cities function
     function filterCities(term) {
       const q = term.trim().toLowerCase();
       const items = allCitiesContainer.querySelectorAll(".city-item-btn");
@@ -346,7 +715,6 @@
       });
     }
 
-    // Also support typing directly in customerCity to filter if panel is open
     cityInput.addEventListener("input", (e) => {
       if (citiesDropdownPanel.style.display === "flex") {
         filterCities(e.target.value);
@@ -369,15 +737,6 @@
     return /^(?:\+212|00212|0)[5-7]\d{8}$/.test(val);
   }
 
-  /* ---------------- WhatsApp Link Updater ---------------- */
-  function updateWhatsAppDirectLink() {
-    if (!btnDirectWhatsapp) return;
-    const { total } = calculateTotal();
-    const customer = (customerName && customerName.value.trim()) || "زبون متجر منارة";
-    const msg = `سلام عليكم، بغيت نطلب ${CONFIG.PRODUCT_NAME} (${state.selectedPackName} - مقاس: ${state.selectedSize} - الكمية: ${state.quantity}) بمبلغ ${total} درهم مع التوصيل المجاني. الاسم: ${customer}.`;
-    btnDirectWhatsapp.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(msg)}`;
-  }
-
   /* ---------------- Meta Pixel Tracking Helper ---------------- */
   function trackPixel(eventName, data = {}) {
     try {
@@ -397,12 +756,11 @@
     } catch (_) {}
   }
 
-  /* ---------------- Send Order to Cloud & Local ---------------- */
+  /* ---------------- Send Order to Cloud ---------------- */
   async function dispatchOrder(order) {
     const webhookUrl = CONFIG.GOOGLE_SHEET_WEBHOOK;
     const jsonStr = JSON.stringify(order);
 
-    // Primary High-Speed Direct Delivery with keepalive (immune to CORS preflight, delivers in < 1s)
     try {
       await fetch(webhookUrl, {
         method: "POST",
@@ -412,7 +770,6 @@
         keepalive: true,
       });
     } catch (_) {
-      // Fallback only if fetch failed to initiate
       try {
         if (typeof navigator !== "undefined" && typeof navigator.sendBeacon === "function") {
           const blob = new Blob([jsonStr], { type: "text/plain;charset=utf-8" });
@@ -428,16 +785,15 @@
   function initOrderForm() {
     if (!orderForm) return;
 
-    // Trigger InitiateCheckout on first interaction
     orderForm.addEventListener("focusin", () => {
       if (!state.checkoutTracked) {
         state.checkoutTracked = true;
-        const { total } = calculateTotal();
+        const { total, prod } = calculateTotal();
         trackPixel("InitiateCheckout", {
-          content_name: CONFIG.PRODUCT_NAME,
+          content_name: prod.name,
           value: total,
           currency: "MAD",
-          num_items: state.quantity * (state.isDoublePack ? 6 : 3),
+          num_items: state.quantity,
         });
       }
     });
@@ -491,9 +847,10 @@
       if (hasError) return;
 
       // Prepare order object
-      const { total, unitPrice } = calculateTotal();
+      const { total, unitPrice, prod } = calculateTotal();
       const orderId = `#${Math.floor(100000 + Math.random() * 900000)}`;
       const nowIso = new Date().toISOString();
+
       const order = {
         orderId,
         id: orderId,
@@ -505,14 +862,16 @@
         customerCity: city,
         city: city,
         address: address || "غير محدد",
-        product: CONFIG.PRODUCT_NAME,
-        productName: CONFIG.PRODUCT_NAME,
+        product: prod.name,
+        productName: prod.name,
+        productId: state.currentProductId,
+        color: state.selectedColorName,
+        colorId: state.selectedColorId,
         size: state.selectedSize,
         age: state.selectedSize,
         pack: state.selectedPackName,
-        color: state.selectedPackName,
         quantity: state.quantity,
-        pieces: state.quantity * (state.isDoublePack ? 6 : 3),
+        pieces: state.quantity * (state.isDouble ? (state.currentProductId === "spiderman" ? 6 : 2) : (state.currentProductId === "spiderman" ? 3 : 1)),
         price: total,
         total: total,
         bundlePrice: total,
@@ -520,7 +879,7 @@
         note: note,
         shipping: "مجاني",
         status: "pending",
-        source: "landing_page",
+        source: "menara_store",
         createdAt: nowIso,
         timestamp: nowIso,
       };
@@ -532,7 +891,7 @@
       // Save locally immediately
       saveOrderLocally(order);
 
-      // Send to server / Google Cloud in parallel
+      // Send to Google Sheets in background/parallel
       try {
         await Promise.race([
           dispatchOrder(order),
@@ -542,7 +901,7 @@
 
       // Fire Meta Pixel Purchase event
       trackPixel("Purchase", {
-        content_name: CONFIG.PRODUCT_NAME,
+        content_name: prod.name,
         content_type: "product",
         value: total,
         currency: "MAD",
@@ -550,9 +909,9 @@
         order_id: orderId,
       });
 
-      // Also fire Lead event
+      // Fire Lead event
       trackPixel("Lead", {
-        content_name: CONFIG.PRODUCT_NAME,
+        content_name: prod.name,
         value: total,
         currency: "MAD",
         order_id: orderId,
@@ -561,7 +920,7 @@
       // Show success modal
       if (modalOrderId) modalOrderId.textContent = orderId;
       if (modalWhatsappBtn) {
-        const waText = `سلام متجر منارة، أنا ${name} من ${city}. قمت بتسجيل طلب ${CONFIG.PRODUCT_NAME} (${state.selectedPackName} - مقاس: ${state.selectedSize} - كمية: ${state.quantity}) برقم ${orderId} بمبلغ ${total} درهم. أرجو تأكيد إرسال الطلبية وشكراً!`;
+        const waText = `سلام متجر منارة، أنا ${name} من ${city}. قمت بتسجيل طلب ${prod.name} (${state.selectedColorName} - مقاس: ${state.selectedSize} - كمية: ${state.quantity}) برقم ${orderId} بمبلغ ${total} درهم. أرجو تأكيد إرسال الطلبية وشكراً!`;
         modalWhatsappBtn.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(waText)}`;
       }
 
@@ -612,32 +971,26 @@
   }
 
   /* ---------------- Initialization ---------------- */
-  document.addEventListener("DOMContentLoaded", () => {
-    initGallery();
+  function init() {
+    renderProductUI();
+    initColorAndGalleryControls();
     initSizeSelector();
     initPackCards();
     initQuantityControls();
+    initCategoryTabs();
+    initCatalogButtons();
+    initAllColorsButtons();
     initCountdownTimer();
     initFaq();
     initCitySelector();
     initOrderForm();
     initModal();
     initMobileBar();
-    updatePriceUI();
-  });
+  }
 
-  // If DOM is already loaded
-  if (document.readyState === "interactive" || document.readyState === "complete") {
-    initGallery();
-    initSizeSelector();
-    initPackCards();
-    initQuantityControls();
-    initCountdownTimer();
-    initFaq();
-    initCitySelector();
-    initOrderForm();
-    initModal();
-    initMobileBar();
-    updatePriceUI();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
 })();
