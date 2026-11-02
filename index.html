@@ -100,7 +100,7 @@
       <p class="hero-desc">اكتشف أرقى المعاطف الرجالية وأفخم أطقم وملابس الأطفال بأثمنة حصرية وتوصيل مجاني لباب منزلك مع حق المعاينة قبل الدفع.</p>
       <div class="hero-actions">
         <a href="#store-catalog" class="btn-hero-primary">🛍️ تصفح منتجات المتجر الآن</a>
-        <a href="#store-all-colors-showcase" class="btn-hero-secondary">📸 استعراض جميع الألوان</a>
+        <a href="#product-section" class="btn-hero-secondary">✨ تفاصيل المنتوج واستمارة الطلب</a>
       </div>
     </div>
   </section>
@@ -219,35 +219,18 @@
       </div>
     </section>
 
-    <!-- Interactive Active Product Showcase & Order Section -->
+    <!-- Interactive Active Product Showcase & Order Section (الترتيب: اسم المنتوج ثم الصورة ثم المواصفات ثم خيارات الطلب) -->
     <article class="product-showcase-card" id="product-section">
       
-      <!-- Gallery Column -->
-      <section class="gallery-column" aria-label="معرض صور المنتج المختار">
-        <div class="featured-img-wrap">
-          <img id="main-featured-image" src="images/coat-black.jpg" alt="صورة المنتج المختار" />
-          <span class="offer-tag" id="main-offer-tag">تخفيض خاص 🔥</span>
-          <span class="free-ship-tag">🚚 توصيل مجاني</span>
-        </div>
-
-        <!-- Thumbnails Strip (يتغير تلقائياً حسب المنتج المختار) -->
-        <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور ألوان المنتج المختار">
-          <!-- ديناميكي بواسطة الجافاسكربت -->
-        </div>
-      </section>
-
-      <!-- Details & Order Form Column -->
-      <section class="details-column" aria-label="تفاصيل المنتج واستمارة الطلب">
-        
-        <div>
-          <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
-          <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي)</h2>
-          <div class="reviews-summary">
-            <span class="stars">★★★★★</span>
-            <span id="active-product-reviews">4.9 (890+ تقييم إيجابي)</span>
-            <span>•</span>
-            <span style="color:#059669; font-weight:800;">متوفر في المخزون ✅</span>
-          </div>
+      <!-- 1. في الأعلى: اسم المنتوج ومعلومات السعر والتقييم -->
+      <section class="product-header-block" aria-label="اسم ومعلومات المنتوج المختار">
+        <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
+        <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h2>
+        <div class="reviews-summary">
+          <span class="stars">★★★★★</span>
+          <span id="active-product-reviews">4.9 (890+ تقييم إيجابي)</span>
+          <span>•</span>
+          <span style="color:#059669; font-weight:800;">متوفر في المخزون ✅</span>
         </div>
 
         <!-- Price Box -->
@@ -274,7 +257,35 @@
             <span>معاينة قبل الدفع</span>
           </div>
         </div>
+      </section>
 
+      <!-- 2. أسفل الاسم: صورة المنتوج ومعرض الألوان المتاحة -->
+      <section class="product-media-block" aria-label="صورة المنتج المختار">
+        <div class="featured-img-wrap">
+          <img id="main-featured-image" src="images/coat-black.jpg" alt="صورة المنتج المختار" />
+          <span class="offer-tag" id="main-offer-tag">تخفيض خاص 🔥</span>
+          <span class="free-ship-tag">🚚 توصيل مجاني</span>
+        </div>
+
+        <!-- Thumbnails Strip (يتغير تلقائياً حسب المنتج المختار) -->
+        <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور ألوان المنتج المختار">
+          <!-- ديناميكي بواسطة الجافاسكربت -->
+        </div>
+      </section>
+
+      <!-- 3. أسفل الصورة: مواصفات ومميزات المنتوج التفصيلية -->
+      <section class="product-specs-card" id="product-specs-box" aria-label="المواصفات والمميزات التفصيلية">
+        <div class="specs-title-row">
+          <span class="specs-icon">📋</span>
+          <h3 class="specs-heading">المواصفات والمميزات التفصيلية لهذا المنتوج:</h3>
+        </div>
+        <div class="specs-list" id="specs-list-container">
+          <!-- ديناميكي بواسطة الجافاسكربت حسب المنتوج -->
+        </div>
+      </section>
+
+      <!-- 4. خيارات الألوان والمقاسات والباقة والكمية -->
+      <section class="product-options-block" aria-label="خيارات اللون والمقاس">
         <!-- Color Selector Group (يتغير ديناميكياً حسب المنتج) -->
         <div class="selector-group">
           <div class="selector-label">
@@ -317,111 +328,110 @@
             <button type="button" class="qty-btn" id="btn-qty-plus" aria-label="زيادة الكمية">+</button>
           </div>
         </div>
+      </section>
 
-        <!-- Direct COD Order Form Box -->
-        <div class="order-form-box" id="order-form-container">
-          <div class="order-form-header">
-            <span class="dot"></span>
-            <span>املأ الاستمارة لتأكيد طلبك الآن</span>
-          </div>
-
-          <form id="order-form" novalidate>
-            
-            <div class="form-field">
-              <label for="customer-name">الاسم الكامل *</label>
-              <input type="text" id="customer-name" name="name" class="form-input" placeholder="مثال: أيوب العلمي" required autocomplete="name" />
-              <div class="field-error" id="name-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-            </div>
-
-            <div class="form-field">
-              <label for="customer-phone">رقم الهاتف (للاتصال بك قبل التوصيل) *</label>
-              <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="06XXXXXXXX أو 07XXXXXXXX" required autocomplete="tel" dir="ltr" style="text-align:right;" />
-              <div class="field-error" id="phone-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-            </div>
-
-            <div class="form-field city-form-field">
-              <div class="field-label-row">
-                <label for="customer-city">المدينة *</label>
-                <button type="button" class="btn-more-cities" id="btn-more-cities" aria-label="عرض جميع مدن المغرب">
-                  <span>المزيد من المدن ▾</span>
-                </button>
-              </div>
-              <div class="city-input-wrap">
-                <input type="text" id="customer-city" name="city" class="form-input" placeholder="اكتب اسم مدينتك للبحث، أو اضغط 'المزيد'..." required autocomplete="off" />
-                <button type="button" class="city-input-btn" id="btn-city-icon" title="استعراض قائمة المدن">📍</button>
-              </div>
-
-              <!-- نافذة منسدلة أنيقة لجميع مدن المغرب مرتبة أبجدياً -->
-              <div class="cities-dropdown-panel" id="cities-dropdown-panel" style="display: none;">
-                <div class="cities-panel-top">
-                  <div class="cities-panel-title">
-                    <span>🇲🇦</span>
-                    <span>جميع مدن ومناطق المغرب (مرتبة أبجدياً)</span>
-                  </div>
-                  <button type="button" class="btn-close-cities" id="btn-close-cities" aria-label="إغلاق">✕</button>
-                </div>
-
-                <!-- شريط بحث داخلي للتصفية السريعة -->
-                <div class="cities-filter-wrap">
-                  <span class="cities-filter-icon">🔍</span>
-                  <input type="text" id="cities-panel-filter" class="cities-filter-input" placeholder="اكتب اسم مدينتك للبحث السريع..." />
-                </div>
-
-                <!-- أزرار سريعة للمدن الأكثر طلباً -->
-                <div class="popular-cities-strip">
-                  <span class="popular-label">المدن الكبرى الأكثر طلباً:</span>
-                  <div class="popular-chips">
-                    <button type="button" class="popular-chip" data-city="الدار البيضاء">الدار البيضاء</button>
-                    <button type="button" class="popular-chip" data-city="الرباط">الرباط</button>
-                    <button type="button" class="popular-chip" data-city="مراكش">مراكش</button>
-                    <button type="button" class="popular-chip" data-city="طنجة">طنجة</button>
-                    <button type="button" class="popular-chip" data-city="فاس">فاس</button>
-                    <button type="button" class="popular-chip" data-city="أكادير">أكادير</button>
-                    <button type="button" class="popular-chip" data-city="مكناس">مكناس</button>
-                    <button type="button" class="popular-chip" data-city="القنيطرة">القنيطرة</button>
-                    <button type="button" class="popular-chip" data-city="وجدة">وجدة</button>
-                    <button type="button" class="popular-chip" data-city="تطوان">تطوان</button>
-                  </div>
-                </div>
-
-                <!-- شبكة جميع مدن المغرب بالترتيب الأبجدي -->
-                <div class="all-cities-grid-container" id="all-cities-container">
-                  <!-- ديناميكي بواسطة الجافاسكربت -->
-                </div>
-              </div>
-              <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-            </div>
-
-            <div class="form-field">
-              <label for="customer-address">العنوان أو الحي (اختياري)</label>
-              <input type="text" id="customer-address" name="address" class="form-input" placeholder="اسم الحي أو الشارع لتسهيل وصول الموزع" />
-            </div>
-
-            <div class="form-field">
-              <label for="customer-note">ملاحظة إضافية (اختياري)</label>
-              <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
-            </div>
-
-            <!-- Big Confirmation Button with ample margin to avoid overlapping -->
-            <button type="submit" class="btn-submit-order" id="btn-submit-order">
-              <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
-              <span class="sub-text">الدفع عند الاستلام بعد معاينة المنتج • التوصيل مجاني 100%</span>
-            </button>
-
-            <!-- Divider Between Order Form and WhatsApp -->
-            <div class="form-or-divider">
-              <span>أو يمكنك الطلب المباشر السريع</span>
-            </div>
-
-            <!-- WhatsApp Direct Order Button -->
-            <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
-              <span>💬</span>
-              <span>طلب مباشر عبر الواتساب بنقرة واحدة</span>
-            </a>
-
-          </form>
+      <!-- 5. استمارة تأكيد الطلب المباشر COD -->
+      <section class="order-form-box" id="order-form-container" aria-label="استمارة تأكيد الطلب">
+        <div class="order-form-header">
+          <span class="dot"></span>
+          <span>املأ الاستمارة لتأكيد طلبك الآن</span>
         </div>
 
+        <form id="order-form" novalidate>
+          
+          <div class="form-field">
+            <label for="customer-name">الاسم الكامل *</label>
+            <input type="text" id="customer-name" name="name" class="form-input" placeholder="مثال: أيوب العلمي" required autocomplete="name" />
+            <div class="field-error" id="name-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="customer-phone">رقم الهاتف (للاتصال بك قبل التوصيل) *</label>
+            <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="06XXXXXXXX أو 07XXXXXXXX" required autocomplete="tel" dir="ltr" style="text-align:right;" />
+            <div class="field-error" id="phone-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+          </div>
+
+          <div class="form-field city-form-field">
+            <div class="field-label-row">
+              <label for="customer-city">المدينة *</label>
+              <button type="button" class="btn-more-cities" id="btn-more-cities" aria-label="عرض جميع مدن المغرب">
+                <span>المزيد من المدن ▾</span>
+              </button>
+            </div>
+            <div class="city-input-wrap">
+              <input type="text" id="customer-city" name="city" class="form-input" placeholder="اكتب اسم مدينتك للبحث، أو اضغط 'المزيد'..." required autocomplete="off" />
+              <button type="button" class="city-input-btn" id="btn-city-icon" title="استعراض قائمة المدن">📍</button>
+            </div>
+
+            <!-- نافذة منسدلة أنيقة لجميع مدن المغرب مرتبة أبجدياً -->
+            <div class="cities-dropdown-panel" id="cities-dropdown-panel" style="display: none;">
+              <div class="cities-panel-top">
+                <div class="cities-panel-title">
+                  <span>🇲🇦</span>
+                  <span>جميع مدن ومناطق المغرب (مرتبة أبجدياً)</span>
+                </div>
+                <button type="button" class="btn-close-cities" id="btn-close-cities" aria-label="إغلاق">✕</button>
+              </div>
+
+              <!-- شريط بحث داخلي للتصفية السريعة -->
+              <div class="cities-filter-wrap">
+                <span class="cities-filter-icon">🔍</span>
+                <input type="text" id="cities-panel-filter" class="cities-filter-input" placeholder="اكتب اسم مدينتك للبحث السريع..." />
+              </div>
+
+              <!-- أزرار سريعة للمدن الأكثر طلباً -->
+              <div class="popular-cities-strip">
+                <span class="popular-label">المدن الكبرى الأكثر طلباً:</span>
+                <div class="popular-chips">
+                  <button type="button" class="popular-chip" data-city="الدار البيضاء">الدار البيضاء</button>
+                  <button type="button" class="popular-chip" data-city="الرباط">الرباط</button>
+                  <button type="button" class="popular-chip" data-city="مراكش">مراكش</button>
+                  <button type="button" class="popular-chip" data-city="طنجة">طنجة</button>
+                  <button type="button" class="popular-chip" data-city="فاس">فاس</button>
+                  <button type="button" class="popular-chip" data-city="أكادير">أكادير</button>
+                  <button type="button" class="popular-chip" data-city="مكناس">مكناس</button>
+                  <button type="button" class="popular-chip" data-city="القنيطرة">القنيطرة</button>
+                  <button type="button" class="popular-chip" data-city="وجدة">وجدة</button>
+                  <button type="button" class="popular-chip" data-city="تطوان">تطوان</button>
+                </div>
+              </div>
+
+              <!-- شبكة جميع مدن المغرب بالترتيب الأبجدي -->
+              <div class="all-cities-grid-container" id="all-cities-container">
+                <!-- ديناميكي بواسطة الجافاسكربت -->
+              </div>
+            </div>
+            <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+          </div>
+
+          <div class="form-field">
+            <label for="customer-address">العنوان أو الحي (اختياري)</label>
+            <input type="text" id="customer-address" name="address" class="form-input" placeholder="اسم الحي أو الشارع لتسهيل وصول الموزع" />
+          </div>
+
+          <div class="form-field">
+            <label for="customer-note">ملاحظة إضافية (اختياري)</label>
+            <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
+          </div>
+
+          <!-- Big Confirmation Button with ample margin to avoid overlapping -->
+          <button type="submit" class="btn-submit-order" id="btn-submit-order">
+            <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
+            <span class="sub-text">الدفع عند الاستلام بعد معاينة المنتج • التوصيل مجاني 100%</span>
+          </button>
+
+          <!-- Divider Between Order Form and WhatsApp -->
+          <div class="form-or-divider">
+            <span>أو يمكنك الطلب المباشر السريع</span>
+          </div>
+
+          <!-- WhatsApp Direct Order Button -->
+          <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
+            <span>💬</span>
+            <span>طلب مباشر عبر الواتساب بنقرة واحدة</span>
+          </a>
+
+        </form>
       </section>
     </article>
 
@@ -455,263 +465,7 @@
       </div>
     </section>
 
-    <!-- =========================================================================
-         DETAILED ALL COLORS SHOWCASE SECTION (في الصور في الاسفل كلما منتوج لنفسه)
-         Here every color of every product is presented as its own dedicated card
-         ========================================================================= -->
-    <section class="content-section" id="store-all-colors-showcase" aria-label="معرض ألوان المنتجات التفصيلي">
-      <div class="section-header-box" style="margin-bottom: 22px;">
-        <div class="section-badge">📸 معرض التشكيلات والألوان الكاملة</div>
-        <h2 class="section-main-title">استعراض كل لون على حدة بالتفصيل</h2>
-        <p class="section-sub-title">اختر أي لون تريده بالضغط على زر "اطلب هذا اللون" للانتقال الفوري للطلب</p>
-      </div>
 
-      <!-- تشكيلة المعاطف الرجالية الفاخرة -->
-      <div class="colors-group-block">
-        <div class="colors-group-header">
-          <span class="group-pill group-pill-1">معاطف رجالية شتوية فاخرة</span>
-          <span class="group-subtitle">3 ألوان ملكية فاخرة بـ 349 درهم فقط</span>
-        </div>
-        <div class="individual-colors-grid">
-          
-          <!-- معطف أسود -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/coat-black.jpg" alt="معطف رجالي كلاسيكي أسود ملكي" loading="lazy" />
-              <span class="color-card-badge">الأكثر فخامة 🔥</span>
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#0f172a;"></span>
-                <span class="color-title">معطف رجالي - أسود ملكي</span>
-              </div>
-              <p class="color-item-desc">اللون الأسود الكلاسيكي الفخم، إطلالة راقية تلائم المناسبات الرسمية والعمل.</p>
-              <div class="color-item-footer">
-                <span class="color-card-price">349 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="coat" data-color-id="black">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- معطف رمادي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/coat-gray.jpg" alt="معطف رجالي رمادي أنيق" loading="lazy" />
-              <span class="color-card-badge" style="background:#475569;">أناقة عصرية ✨</span>
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#94a3b8;"></span>
-                <span class="color-title">معطف رجالي - رمادي أنيق</span>
-              </div>
-              <p class="color-item-desc">درجة رمادية عصرية متناسقة مع جميع الملابس، صوف كاشمير دافئ وملمس ناعم.</p>
-              <div class="color-item-footer">
-                <span class="color-card-price">349 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="coat" data-color-id="gray">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- معطف أزرق -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/coat-blue.jpg" alt="معطف رجالي أزرق بترولي" loading="lazy" />
-              <span class="color-card-badge" style="background:#1e40af;">لون مميز وجذاب 💎</span>
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#1e3a8a;"></span>
-                <span class="color-title">معطف رجالي - أزرق بترولي</span>
-              </div>
-              <p class="color-item-desc">أزرق ملكي أنيق وجريء يمنحك حضوراً متميزاً في فصل الشتاء.</p>
-              <div class="color-item-footer">
-                <span class="color-card-price">349 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="coat" data-color-id="blue">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- تشكيلة أطقم بولو شتوية للأطفال (6 ألوان رخامية منفصلة) -->
-      <div class="colors-group-block">
-        <div class="colors-group-header">
-          <span class="group-pill group-pill-2">أطقم بولو شتوية للأطفال (Polo Kids)</span>
-          <span class="group-subtitle">6 ألوان رخامية حصرية للأعمار من 2 إلى 12 سنة بـ 199 درهم</span>
-        </div>
-        <div class="individual-colors-grid individual-colors-grid-3cols">
-          
-          <!-- بولو أخضر رخامي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/polo-green-marble.jpg" alt="طقم بولو أطفال أخضر رخامي" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#10b981;"></span>
-                <span class="color-title">طقم بولو - أخضر رخامي</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="green-marble">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- بولو بيج رخامي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/polo-beige-marble.jpg" alt="طقم بولو أطفال بيج رخامي" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#d4b996;"></span>
-                <span class="color-title">طقم بولو - بيج رخامي</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="beige-marble">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- بولو رمادي رخامي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/polo-gray-marble.jpg" alt="طقم بولو أطفال رمادي رخامي" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#64748b;"></span>
-                <span class="color-title">طقم بولو - رمادي رخامي</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="gray-marble">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- بولو تركواز رخامي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/polo-turquoise-marble.jpg" alt="طقم بولو أطفال تركواز رخامي" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#06b6d4;"></span>
-                <span class="color-title">طقم بولو - تركواز رخامي</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="turquoise-marble">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- بولو فضي رخامي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/polo-silver-marble.jpg" alt="طقم بولو أطفال فضي رخامي" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#cbd5e1;"></span>
-                <span class="color-title">طقم بولو - فضي رخامي</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="silver-marble">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- بولو موكا رخامي -->
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/polo-mocha-marble.jpg" alt="طقم بولو أطفال موكا رخامي" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#78350f;"></span>
-                <span class="color-title">طقم بولو - موكا رخامي</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم</span>
-                <button type="button" class="btn-pick-color" data-product="polo" data-color-id="mocha-marble">
-                  <span>اطلب هذا اللون 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- تشكيلة بيجامات سبايدرمان للأطفال -->
-      <div class="colors-group-block">
-        <div class="colors-group-header">
-          <span class="group-pill group-pill-gold">باقات بيجامات سبايدرمان للأطفال</span>
-          <span class="group-subtitle">3 أطقم كاملة قطن 100% بـ 199 درهم فقط</span>
-        </div>
-        <div class="individual-colors-grid">
-          
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/trio-pack-1.jpeg" alt="المجموعة 1 بيجامة سبايدرمان" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#1e293b;"></span>
-                <span class="color-title">المجموعة 1 (أسود + أزرق + رمادي)</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم (3 أطقم)</span>
-                <button type="button" class="btn-pick-color" data-product="spiderman" data-color-id="pack1">
-                  <span>اطلب هذه المجموعة 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="color-item-card">
-            <div class="color-item-img">
-              <img src="images/trio-pack-2.jpeg" alt="المجموعة 2 بيجامة سبايدرمان" loading="lazy" />
-            </div>
-            <div class="color-item-info">
-              <div class="color-item-caption">
-                <span class="color-dot" style="background:#059669;"></span>
-                <span class="color-title">المجموعة 2 (أخضر + عنابي + بيج)</span>
-              </div>
-              <div class="color-item-footer">
-                <span class="color-card-price">199 درهم (3 أطقم)</span>
-                <button type="button" class="btn-pick-color" data-product="spiderman" data-color-id="pack2">
-                  <span>اطلب هذه المجموعة 🛍️</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
 
     <!-- Reviews -->
     <section class="content-section" aria-label="آراء الزبناء">

@@ -33,6 +33,13 @@
         { id: "gray", name: "رمادي أنيق", hex: "#94a3b8", img: "images/coat-gray.jpg", badge: "أناقة عصرية" },
         { id: "blue", name: "أزرق بترولي", hex: "#1e3a8a", img: "images/coat-blue.jpg", badge: "لون مميز" },
       ],
+      specs: [
+        { icon: "🧶", label: "نوع القماش", text: "صوف كاشمير أصلي فاخر 100% ملمس ناعم ومقاوم للبرد القارس والرياح الشتوية" },
+        { icon: "🛡️", label: "البطانة الداخلية", text: "مبطن بالكامل ببطانة حرارية عازلة تمنح الدفء الفائق والراحة التامة طوال اليوم" },
+        { icon: "✂️", label: "القصة والتفصيل", text: "قصة إيطالية ملكية كلاسيكية مع ياقة عصرية وجيوب جانبية مريحة وتشطيب متقن" },
+        { icon: "📏", label: "المقاسات المتوفرة", text: "M - L - XL - XXL - 3XL (مقاسات مضبوطة ومناسبة لجميع الأجسام)" },
+        { icon: "🚚", label: "الضمان والاستلام", text: "توصيل سريع مجاني لجميع مدن المغرب مع حق فتح الطرد ومعاينة القياس والجودة قبل الدفع" },
+      ],
       packs: [
         {
           id: "pack1",
@@ -77,6 +84,13 @@
         { id: "silver-marble", name: "فضي رخامي", hex: "#cbd5e1", img: "images/polo-silver-marble.jpg", badge: "عصري وأنيق" },
         { id: "mocha-marble", name: "موكا رخامي", hex: "#78350f", img: "images/polo-mocha-marble.jpg", badge: "دافئ وفخم" },
       ],
+      specs: [
+        { icon: "👕", label: "محتويات الطقم", text: "طقم كامل مكون من قطعتين: سويت شيرت كابيشون بسحاب أمامي + بنطلون رياضي مبطن" },
+        { icon: "🌿", label: "خامة القماش", text: "قطن شتوي 100% مبطن بطبقة داخلية فائقة النعومة تحمي الطفل من البرد وآمنة على البشرة" },
+        { icon: "🎨", label: "النقشة والتطريز", text: "طبعة رخامية عصرية حصرية فائقة الجودة لا تبهت مع الغسيل وتطريز شعار Polo الأصلي" },
+        { icon: "📏", label: "الأعمار والمقاسات", text: "متوفر لجميع الفئات العمرية من سنتين (2) حتى 12 سنة كاملة بقصات مريحة" },
+        { icon: "🚚", label: "الضمان والاستلام", text: "توصيل مجاني لباب منزلك مع حق المعاينة وقياس الطقم قبل الدفع مع ضمان الاستبدال" },
+      ],
       packs: [
         {
           id: "pack1",
@@ -116,6 +130,13 @@
       colors: [
         { id: "pack1", name: "المجموعة 1 (أسود + أزرق + رمادي)", hex: "#1e293b", img: "images/trio-pack-1.jpeg", badge: "المجموعة 1" },
         { id: "pack2", name: "المجموعة 2 (أخضر + عنابي + بيج)", hex: "#059669", img: "images/trio-pack-2.jpeg", badge: "المجموعة 2" },
+      ],
+      specs: [
+        { icon: "🕷️", label: "محتوى العرض", text: "باقة تشمل 3 أطقم بيجامة كاملة (3 قمصان بأكمام طويلة + 3 سراويل قطنية كاملة)" },
+        { icon: "🌿", label: "خامة القماش", text: "قطن ناعم ومريح 100% مناسب للنوم وللحركة اليومية بدون أي تحسس لبشرة الطفل" },
+        { icon: "🎨", label: "المجموعات والألوان", text: "المجموعة 1 (أسود + أزرق + رمادي) أو المجموعة 2 (أخضر + عنابي + بيج)" },
+        { icon: "📏", label: "الأعمار والمقاسات", text: "تشكيلة للأعمار من سنة واحدة إلى 10 سنوات كاملة بخياطة متينة ومريحة" },
+        { icon: "🚚", label: "الضمان والاستلام", text: "3 أطقم بـ 199 درهم فقط مع التوصيل المجاني والدفع بعد الاستلام والمعاينة" },
       ],
       packs: [
         {
@@ -165,6 +186,7 @@
   const selectedSizeLabel = $("#selected-size-label");
   const packCardsWrap = $("#pack-cards-wrap");
   const selectedPackLabel = $("#selected-pack-label");
+  const specsListContainer = $("#specs-list-container");
   const btnQtyMinus = $("#btn-qty-minus");
   const btnQtyPlus = $("#btn-qty-plus");
   const qtyInput = $("#qty-input");
@@ -222,7 +244,7 @@
   function renderProductUI() {
     const prod = PRODUCTS[state.currentProductId] || PRODUCTS.coat;
 
-    // 1. Update text headers
+    // 1. Update text headers (اسم المنتوج في الأعلى)
     const kickerEl = $("#active-product-kicker");
     const titleEl = $("#active-product-title");
     const reviewsEl = $("#active-product-reviews");
@@ -231,7 +253,38 @@
     if (reviewsEl) reviewsEl.textContent = prod.reviews;
     if (sizeGroupTitle) sizeGroupTitle.textContent = prod.sizeLabel;
 
-    // 2. Render Color Swatches
+    // 2. Update Main Image and Thumbnails (صورة المنتوج أسفل الاسم)
+    const curColor = prod.colors.find((c) => c.id === state.selectedColorId) || prod.colors[0];
+    if (mainFeaturedImage && curColor) {
+      mainFeaturedImage.src = curColor.img;
+      mainFeaturedImage.alt = `${prod.name} - ${curColor.name}`;
+    }
+
+    if (thumbnailsContainer) {
+      thumbnailsContainer.innerHTML = prod.colors.map((c) => {
+        const isActive = c.id === state.selectedColorId;
+        return `
+          <button type="button" class="thumb-btn ${isActive ? "active" : ""}" data-img="${c.img}" data-color-id="${c.id}" aria-label="عرض لون ${c.name}">
+            <img src="${c.img}" alt="${c.name}" loading="lazy" />
+          </button>
+        `;
+      }).join("");
+    }
+
+    // 3. Render Specifications (مواصفات ومميزات المنتوج أسفل الصورة)
+    if (specsListContainer && Array.isArray(prod.specs)) {
+      specsListContainer.innerHTML = prod.specs.map((s) => `
+        <div class="spec-item">
+          <span class="spec-icon">${s.icon}</span>
+          <div class="spec-details">
+            <span class="spec-label">${s.label}:</span>
+            <span class="spec-text">${s.text}</span>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // 4. Render Color Swatches
     if (colorOptionsWrap) {
       colorOptionsWrap.innerHTML = prod.colors.map((c) => {
         const isActive = c.id === state.selectedColorId;
@@ -244,19 +297,7 @@
       }).join("");
     }
 
-    // 3. Render Gallery Thumbnails
-    if (thumbnailsContainer) {
-      thumbnailsContainer.innerHTML = prod.colors.map((c) => {
-        const isActive = c.id === state.selectedColorId;
-        return `
-          <button type="button" class="thumb-btn ${isActive ? "active" : ""}" data-img="${c.img}" data-color-id="${c.id}">
-            <img src="${c.img}" alt="${c.name}" loading="lazy" />
-          </button>
-        `;
-      }).join("");
-    }
-
-    // 4. Render Size Pills
+    // 5. Render Size Pills
     if (sizePillsWrap) {
       sizePillsWrap.innerHTML = prod.sizes.map((s) => {
         const isActive = s === state.selectedSize;
@@ -268,7 +309,7 @@
       }).join("");
     }
 
-    // 5. Render Pack Cards
+    // 6. Render Pack Cards
     if (packCardsWrap) {
       packCardsWrap.innerHTML = prod.packs.map((pk) => {
         const isActive = pk.id === state.selectedPackId;
@@ -293,17 +334,10 @@
       }).join("");
     }
 
-    // 6. Update Labels
+    // 7. Update Labels
     if (selectedColorLabel) selectedColorLabel.textContent = state.selectedColorName;
     if (selectedSizeLabel) selectedSizeLabel.textContent = state.selectedSize;
     if (selectedPackLabel) selectedPackLabel.textContent = state.selectedPackName;
-
-    // 7. Update Main Image
-    const curColor = prod.colors.find((c) => c.id === state.selectedColorId) || prod.colors[0];
-    if (mainFeaturedImage && curColor) {
-      mainFeaturedImage.src = curColor.img;
-      mainFeaturedImage.alt = `${prod.name} - ${curColor.name}`;
-    }
 
     // 8. Update Active State in Catalog Cards
     $$(".store-product-card").forEach((card) => {
@@ -512,44 +546,16 @@
     });
   }
 
-  /* ---------------- Catalog Select Buttons ---------------- */
+  /* ---------------- Catalog Cards and Select Buttons (واحد جنب الآخر) ---------------- */
   function initCatalogButtons() {
-    $$("[data-select-product]").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const prodId = btn.getAttribute("data-select-product");
+    $$(".store-product-card").forEach((card) => {
+      card.addEventListener("click", (e) => {
+        const prodId = card.getAttribute("data-product-id");
         if (prodId && PRODUCTS[prodId]) {
           switchProduct(prodId);
           const showcase = $("#product-section");
           if (showcase) {
             showcase.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }
-      });
-    });
-  }
-
-  /* ---------------- Bottom All Colors Showcase Pick Buttons ---------------- */
-  function initAllColorsButtons() {
-    $$(".btn-pick-color").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const prodId = btn.getAttribute("data-product");
-        const colorId = btn.getAttribute("data-color-id");
-
-        if (prodId && PRODUCTS[prodId]) {
-          switchProduct(prodId, colorId);
-
-          const formBox = $("#order-form-container");
-          if (formBox) {
-            formBox.scrollIntoView({ behavior: "smooth", block: "start" });
-            if (customerName) {
-              setTimeout(() => {
-                customerName.focus();
-                formBox.classList.add("highlight-form-pulse");
-                setTimeout(() => formBox.classList.remove("highlight-form-pulse"), 1200);
-              }, 450);
-            }
           }
         }
       });
@@ -846,10 +852,11 @@
 
       if (hasError) return;
 
-      // Prepare order object
+      // Prepare order object with complete details for dashboard and operator
       const { total, unitPrice, prod } = calculateTotal();
       const orderId = `#${Math.floor(100000 + Math.random() * 900000)}`;
       const nowIso = new Date().toISOString();
+      const curColor = prod.colors.find((c) => c.id === state.selectedColorId) || prod.colors[0];
 
       const order = {
         orderId,
@@ -876,6 +883,7 @@
         total: total,
         bundlePrice: total,
         unitPrice: unitPrice,
+        image: curColor.img,
         note: note,
         shipping: "مجاني",
         status: "pending",
@@ -979,7 +987,6 @@
     initQuantityControls();
     initCategoryTabs();
     initCatalogButtons();
-    initAllColorsButtons();
     initCountdownTimer();
     initFaq();
     initCitySelector();
