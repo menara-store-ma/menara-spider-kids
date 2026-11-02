@@ -510,53 +510,134 @@
     });
   }
 
+  /* ---------------- View Routing & Navigation (واجهة المتجر vs صفحة المنتج المستقلة) ---------------- */
+  function showStorefront(skipHash) {
+    const vStore = $("#view-storefront");
+    const vProd = $("#view-product-page");
+    const heroBanner = $(".store-hero-banner");
+    const mobileBar = $("#mobile-sticky-bar");
+
+    if (vStore) vStore.style.display = "";
+    if (vProd) vProd.style.display = "none";
+    if (heroBanner) heroBanner.style.display = "";
+    if (mobileBar) mobileBar.style.display = "none";
+
+    $$(".store-nav-bar .nav-tab").forEach((t) => {
+      if (t.getAttribute("data-category") === "all") t.classList.add("active");
+      else t.classList.remove("active");
+    });
+
+    if (!skipHash && window.location.hash) {
+      history.pushState(null, "", window.location.pathname);
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function showProductPage(productId, colorId, size, skipHash) {
+    const vStore = $("#view-storefront");
+    const vProd = $("#view-product-page");
+    const heroBanner = $(".store-hero-banner");
+    const mobileBar = $("#mobile-sticky-bar");
+
+    if (!PRODUCTS[productId]) productId = "coat";
+
+    switchProduct(productId, colorId, size);
+
+    if (vStore) vStore.style.display = "none";
+    if (vProd) vProd.style.display = "block";
+    if (heroBanner) heroBanner.style.display = "none";
+    if (mobileBar) mobileBar.style.display = "flex";
+
+    const crumb = $("#crumb-product-name");
+    if (crumb) crumb.textContent = PRODUCTS[productId].shortName;
+
+    // Highlight category tab
+    const cat = PRODUCTS[productId].category;
+    $$(".store-nav-bar .nav-tab").forEach((t) => {
+      if (t.getAttribute("data-category") === cat) t.classList.add("active");
+      else t.classList.remove("active");
+    });
+
+    if (!skipHash && window.location.hash !== `#${productId}`) {
+      history.pushState(null, "", `#${productId}`);
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function initRouting() {
+    function handleRoute() {
+      const hash = window.location.hash.replace("#", "").trim();
+      if (hash === "coat" || hash === "polo" || hash === "spiderman") {
+        showProductPage(hash, null, null, true);
+      } else {
+        showStorefront(true);
+      }
+    }
+
+    window.addEventListener("popstate", handleRoute);
+
+    const btnBack = $("#btn-back-to-store");
+    if (btnBack) {
+      btnBack.addEventListener("click", (e) => {
+        e.preventDefault();
+        showStorefront();
+      });
+    }
+
+    // Hero buttons
+    const heroBrowse = $(".btn-hero-primary");
+    if (heroBrowse) {
+      heroBrowse.addEventListener("click", (e) => {
+        e.preventDefault();
+        showStorefront();
+        const catalogEl = $("#store-catalog");
+        if (catalogEl) catalogEl.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
+    const heroDetails = $(".btn-hero-secondary");
+    if (heroDetails) {
+      heroDetails.addEventListener("click", (e) => {
+        e.preventDefault();
+        showProductPage("coat");
+      });
+    }
+
+    handleRoute();
+  }
+
   /* ---------------- Category Filter Tabs ---------------- */
   function initCategoryTabs() {
     const tabs = $$(".store-nav-bar .nav-tab");
-    const cards = $$(".store-catalog-section .store-product-card");
 
     tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-
+      tab.addEventListener("click", (e) => {
+        e.preventDefault();
         const category = tab.getAttribute("data-category");
 
-        cards.forEach((card) => {
-          const cardId = card.getAttribute("data-product-id");
-          const prod = PRODUCTS[cardId];
-          if (!prod) return;
-
-          if (category === "all" || prod.category === category) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
-        });
-
-        // If specific category is picked, auto switch to that product
-        if (category === "men") {
-          switchProduct("coat");
+        if (category === "all") {
+          showStorefront();
+        } else if (category === "men") {
+          showProductPage("coat");
         } else if (category === "polo") {
-          switchProduct("polo");
+          showProductPage("polo");
         } else if (category === "pajama") {
-          switchProduct("spiderman");
+          showProductPage("spiderman");
         }
       });
     });
   }
 
-  /* ---------------- Catalog Cards and Select Buttons (واحد جنب الآخر) ---------------- */
+  /* ---------------- Catalog Cards (الضغط على منتوج يدخلك إلى صفحته المستقلة) ---------------- */
   function initCatalogButtons() {
     $$(".store-product-card").forEach((card) => {
       card.addEventListener("click", (e) => {
+        e.preventDefault();
         const prodId = card.getAttribute("data-product-id");
         if (prodId && PRODUCTS[prodId]) {
-          switchProduct(prodId);
-          const showcase = $("#product-section");
-          if (showcase) {
-            showcase.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+          showProductPage(prodId);
         }
       });
     });
@@ -993,6 +1074,7 @@
     initOrderForm();
     initModal();
     initMobileBar();
+    initRouting();
   }
 
   if (document.readyState === "loading") {

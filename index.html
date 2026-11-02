@@ -108,443 +108,466 @@
   <!-- Main Container -->
   <main class="page-container">
 
-    <!-- Store Products Catalog Grid -->
-    <section class="store-catalog-section" id="store-catalog">
-      <div class="section-header-box">
-        <div class="section-badge">🛍️ كتالوج المتجر</div>
-        <h2 class="section-main-title">منتجات متجر منارة المتوفرة حالياً</h2>
-        <p class="section-sub-title">اختر المنتوج الذي يناسبك لتحديد المقاس واللون وإتمام طلبك بسهولة وسرعة</p>
-      </div>
+    <!-- ==============================================================
+         VIEW 1: واجهة المتجر الرئيسية (كتالوج المنتجات فقط دون تداخل)
+         ============================================================== -->
+    <div id="view-storefront" class="app-view">
 
-      <div class="products-grid" id="products-catalog-grid">
-        
-        <!-- Product Card 1: Coat -->
-        <article class="store-product-card active" data-product-id="coat" id="card-coat">
-          <div class="product-badge-flag">الأكثر طلباً للرجال 🔥</div>
-          <div class="card-img-wrap">
-            <img src="images/coat-black.jpg" alt="معطف رجالي شتوي فاخر" id="catalog-img-coat" loading="lazy" />
-            <div class="color-mini-preview">
-              <span class="mini-dot active" style="background:#0f172a;" title="أسود"></span>
-              <span class="mini-dot" style="background:#94a3b8;" title="رمادي"></span>
-              <span class="mini-dot" style="background:#1e3a8a;" title="أزرق بترولي"></span>
-            </div>
-          </div>
-          <div class="card-details">
-            <span class="card-cat-tag">أزياء رجالية</span>
-            <h3 class="card-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h3>
-            <div class="card-rating">
-              <span class="stars">★★★★★</span>
-              <span>4.9 (890+ تقييم)</span>
-            </div>
-            <p class="card-excerpt">معطف صوف كاشمير راقي مبطن بالكامل ومقاوم للبرد القارس. ياقة مريحة وقصة إيطالية ملكية أنيقة.</p>
-            <div class="card-price-row">
-              <div class="card-price">
-                <span class="amount">349</span> <small>درهم</small>
-              </div>
-              <div class="card-old-price">499 درهم</div>
-              <span class="card-save-badge">وفر 150 د.م</span>
-            </div>
-            <button type="button" class="btn-select-product" data-select-product="coat">
-              <span>🛒 اختيار المقاس واللون للطلب</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Product Card 2: Polo Kids -->
-        <article class="store-product-card" data-product-id="polo" id="card-polo">
-          <div class="product-badge-flag flag-blue">تشكيلة جديدة وحصرية ✨</div>
-          <div class="card-img-wrap">
-            <img src="images/polo-green-marble.jpg" alt="طقم بولو شتوي للأطفال" id="catalog-img-polo" loading="lazy" />
-            <div class="color-mini-preview">
-              <span class="mini-dot active" style="background:#10b981;" title="أخضر رخامي"></span>
-              <span class="mini-dot" style="background:#d4b996;" title="بيج رخامي"></span>
-              <span class="mini-dot" style="background:#64748b;" title="رمادي رخامي"></span>
-              <span class="mini-dot" style="background:#06b6d4;" title="تركواز رخامي"></span>
-              <span class="mini-dot" style="background:#cbd5e1;" title="فضي رخامي"></span>
-              <span class="mini-dot" style="background:#78350f;" title="موكا رخامي"></span>
-            </div>
-          </div>
-          <div class="card-details">
-            <span class="card-cat-tag">ملابس أطفال</span>
-            <h3 class="card-title">طقم بولو شتوي فاخر للأطفال (Polo Kids)</h3>
-            <div class="card-rating">
-              <span class="stars">★★★★★</span>
-              <span>5.0 (1,450+ تقييم)</span>
-            </div>
-            <p class="card-excerpt">سويت شيرت كابيشون بسحاب وبنطلون رياضي مبطن بقطن دافئ ومطرز بشعار بولو مع طبعة رخامية عصرية مذهلة.</p>
-            <div class="card-price-row">
-              <div class="card-price">
-                <span class="amount">199</span> <small>درهم</small>
-              </div>
-              <div class="card-old-price">299 درهم</div>
-              <span class="card-save-badge">وفر 100 د.م</span>
-            </div>
-            <button type="button" class="btn-select-product" data-select-product="polo">
-              <span>🛒 اختيار المقاس واللون للطلب</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Product Card 3: Spiderman Pajama -->
-        <article class="store-product-card" data-product-id="spiderman" id="card-spiderman">
-          <div class="product-badge-flag flag-gold">عرض التوفير الأكبر 💥</div>
-          <div class="card-img-wrap">
-            <img src="images/trio-pack-1.jpeg" alt="طقم بيجامة سبايدرمان للأطفال" id="catalog-img-spiderman" loading="lazy" />
-            <div class="color-mini-preview">
-              <span class="mini-dot active" style="background:#1e293b;" title="المجموعة 1"></span>
-              <span class="mini-dot" style="background:#059669;" title="المجموعة 2"></span>
-            </div>
-          </div>
-          <div class="card-details">
-            <span class="card-cat-tag">ملابس أطفال</span>
-            <h3 class="card-title">طقم بيجامة سبايدرمان للأطفال (باقة 3 أطقم)</h3>
-            <div class="card-rating">
-              <span class="stars">★★★★★</span>
-              <span>5.0 (2,500+ تقييم)</span>
-            </div>
-            <p class="card-excerpt">باقة ممتازة تحتوي على 3 أطقم قطنية كاملة بألوان مختلفة، رسومات سبايدرمان محبوبة وخياطة مغربية متينة.</p>
-            <div class="card-price-row">
-              <div class="card-price">
-                <span class="amount">199</span> <small>درهم</small>
-              </div>
-              <div class="card-old-price">329 درهم</div>
-              <span class="card-save-badge">3 أطقم بـ 199 د.م</span>
-            </div>
-            <button type="button" class="btn-select-product" data-select-product="spiderman">
-              <span>🛒 اختيار المقاس والمجموعة للطلب</span>
-            </button>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Interactive Active Product Showcase & Order Section (الترتيب: اسم المنتوج ثم الصورة ثم المواصفات ثم خيارات الطلب) -->
-    <article class="product-showcase-card" id="product-section">
-      
-      <!-- 1. في الأعلى: اسم المنتوج ومعلومات السعر والتقييم -->
-      <section class="product-header-block" aria-label="اسم ومعلومات المنتوج المختار">
-        <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
-        <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h2>
-        <div class="reviews-summary">
-          <span class="stars">★★★★★</span>
-          <span id="active-product-reviews">4.9 (890+ تقييم إيجابي)</span>
-          <span>•</span>
-          <span style="color:#059669; font-weight:800;">متوفر في المخزون ✅</span>
+      <!-- Store Products Catalog Grid -->
+      <section class="store-catalog-section" id="store-catalog">
+        <div class="section-header-box">
+          <div class="section-badge">🛍️ متجر منارة الإلكتروني</div>
+          <h2 class="section-main-title">منتجاتنا المتوفرة حالياً</h2>
+          <p class="section-sub-title">اضغط على أي منتج للدخول لصفحته المستقلة للاطلاع على صوره ومواصفاته الكاملة والطلب</p>
         </div>
 
-        <!-- Price Box -->
-        <div class="price-box">
-          <div class="price-current">
-            <span id="price-display">349</span> <small>درهم</small>
-          </div>
-          <div class="price-old" id="old-price-display">499 درهم</div>
-          <span class="discount-pill" id="discount-display">وفر 150 درهم</span>
-        </div>
-
-        <!-- Trust Capsules -->
-        <div class="trust-row">
-          <div class="trust-capsule">
-            <span class="trust-icon">🚚</span>
-            <span>توصيل مجاني 100%</span>
-          </div>
-          <div class="trust-capsule">
-            <span class="trust-icon">💵</span>
-            <span>الدفع عند الاستلام</span>
-          </div>
-          <div class="trust-capsule">
-            <span class="trust-icon">💯</span>
-            <span>معاينة قبل الدفع</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2. أسفل الاسم: صورة المنتوج ومعرض الألوان المتاحة -->
-      <section class="product-media-block" aria-label="صورة المنتج المختار">
-        <div class="featured-img-wrap">
-          <img id="main-featured-image" src="images/coat-black.jpg" alt="صورة المنتج المختار" />
-          <span class="offer-tag" id="main-offer-tag">تخفيض خاص 🔥</span>
-          <span class="free-ship-tag">🚚 توصيل مجاني</span>
-        </div>
-
-        <!-- Thumbnails Strip (يتغير تلقائياً حسب المنتج المختار) -->
-        <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور ألوان المنتج المختار">
-          <!-- ديناميكي بواسطة الجافاسكربت -->
-        </div>
-      </section>
-
-      <!-- 3. أسفل الصورة: مواصفات ومميزات المنتوج التفصيلية -->
-      <section class="product-specs-card" id="product-specs-box" aria-label="المواصفات والمميزات التفصيلية">
-        <div class="specs-title-row">
-          <span class="specs-icon">📋</span>
-          <h3 class="specs-heading">المواصفات والمميزات التفصيلية لهذا المنتوج:</h3>
-        </div>
-        <div class="specs-list" id="specs-list-container">
-          <!-- ديناميكي بواسطة الجافاسكربت حسب المنتوج -->
-        </div>
-      </section>
-
-      <!-- 4. خيارات الألوان والمقاسات والباقة والكمية -->
-      <section class="product-options-block" aria-label="خيارات اللون والمقاس">
-        <!-- Color Selector Group (يتغير ديناميكياً حسب المنتج) -->
-        <div class="selector-group">
-          <div class="selector-label">
-            <span>اختر اللون المفضل:</span>
-            <span class="selected-value" id="selected-color-label">أسود ملكي</span>
-          </div>
-          <div class="color-options-wrap" id="color-options-wrap">
-            <!-- ديناميكي بواسطة الجافاسكربت -->
-          </div>
-        </div>
-
-        <!-- Size Selection Group (ديناميكي: مقاسات ملابس أو أعمار أطفال) -->
-        <div class="selector-group">
-          <div class="selector-label">
-            <span id="size-group-title">اختر المقاس المناسب:</span>
-            <span class="selected-value" id="selected-size-label">L</span>
-          </div>
-          <div class="size-pills" id="size-pills-wrap">
-            <!-- ديناميكي بواسطة الجافاسكربت -->
-          </div>
-        </div>
-
-        <!-- Bundle / Offer Card Group -->
-        <div class="selector-group">
-          <div class="selector-label">
-            <span>باقة الطلب والعروض المتاحة:</span>
-            <span class="selected-value" id="selected-pack-label">الطلب الفردي (1 قطعة)</span>
-          </div>
-          <div class="pack-cards" id="pack-cards-wrap">
-            <!-- ديناميكي بواسطة الجافاسكربت -->
-          </div>
-        </div>
-
-        <!-- Quantity Selector -->
-        <div class="selector-group" style="flex-direction:row; align-items:center; justify-content:space-between; margin-top:4px;">
-          <span style="font-size:13.5px; font-weight:800; color:#1e293b;">الكمية:</span>
-          <div class="qty-control">
-            <button type="button" class="qty-btn" id="btn-qty-minus" aria-label="إنقاص الكمية">−</button>
-            <input type="text" class="qty-input" id="qty-input" value="1" readonly />
-            <button type="button" class="qty-btn" id="btn-qty-plus" aria-label="زيادة الكمية">+</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. استمارة تأكيد الطلب المباشر COD -->
-      <section class="order-form-box" id="order-form-container" aria-label="استمارة تأكيد الطلب">
-        <div class="order-form-header">
-          <span class="dot"></span>
-          <span>املأ الاستمارة لتأكيد طلبك الآن</span>
-        </div>
-
-        <form id="order-form" novalidate>
+        <div class="products-grid" id="products-catalog-grid">
           
-          <div class="form-field">
-            <label for="customer-name">الاسم الكامل *</label>
-            <input type="text" id="customer-name" name="name" class="form-input" placeholder="مثال: أيوب العلمي" required autocomplete="name" />
-            <div class="field-error" id="name-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-          </div>
-
-          <div class="form-field">
-            <label for="customer-phone">رقم الهاتف (للاتصال بك قبل التوصيل) *</label>
-            <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="06XXXXXXXX أو 07XXXXXXXX" required autocomplete="tel" dir="ltr" style="text-align:right;" />
-            <div class="field-error" id="phone-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-          </div>
-
-          <div class="form-field city-form-field">
-            <div class="field-label-row">
-              <label for="customer-city">المدينة *</label>
-              <button type="button" class="btn-more-cities" id="btn-more-cities" aria-label="عرض جميع مدن المغرب">
-                <span>المزيد من المدن ▾</span>
+          <!-- Product Card 1: Coat -->
+          <article class="store-product-card" data-product-id="coat" id="card-coat">
+            <div class="product-badge-flag">الأكثر طلباً للرجال 🔥</div>
+            <div class="card-img-wrap">
+              <img src="images/coat-black.jpg" alt="معطف رجالي شتوي فاخر" id="catalog-img-coat" loading="lazy" />
+              <div class="color-mini-preview">
+                <span class="mini-dot active" style="background:#0f172a;" title="أسود"></span>
+                <span class="mini-dot" style="background:#94a3b8;" title="رمادي"></span>
+                <span class="mini-dot" style="background:#1e3a8a;" title="أزرق بترولي"></span>
+              </div>
+            </div>
+            <div class="card-details">
+              <span class="card-cat-tag">أزياء رجالية</span>
+              <h3 class="card-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+                <span>4.9 (890+ تقييم)</span>
+              </div>
+              <p class="card-excerpt">معطف صوف كاشمير راقي مبطن بالكامل ومقاوم للبرد القارس. ياقة مريحة وقصة إيطالية ملكية أنيقة.</p>
+              <div class="card-price-row">
+                <div class="card-price">
+                  <span class="amount">349</span> <small>درهم</small>
+                </div>
+                <div class="card-old-price">499 درهم</div>
+                <span class="card-save-badge">وفر 150 د.م</span>
+              </div>
+              <button type="button" class="btn-select-product" data-select-product="coat">
+                <span>🛒 معاينة وطلب هذا المنتج</span>
               </button>
             </div>
-            <div class="city-input-wrap">
-              <input type="text" id="customer-city" name="city" class="form-input" placeholder="اكتب اسم مدينتك للبحث، أو اضغط 'المزيد'..." required autocomplete="off" />
-              <button type="button" class="city-input-btn" id="btn-city-icon" title="استعراض قائمة المدن">📍</button>
-            </div>
+          </article>
 
-            <!-- نافذة منسدلة أنيقة لجميع مدن المغرب مرتبة أبجدياً -->
-            <div class="cities-dropdown-panel" id="cities-dropdown-panel" style="display: none;">
-              <div class="cities-panel-top">
-                <div class="cities-panel-title">
-                  <span>🇲🇦</span>
-                  <span>جميع مدن ومناطق المغرب (مرتبة أبجدياً)</span>
-                </div>
-                <button type="button" class="btn-close-cities" id="btn-close-cities" aria-label="إغلاق">✕</button>
-              </div>
-
-              <!-- شريط بحث داخلي للتصفية السريعة -->
-              <div class="cities-filter-wrap">
-                <span class="cities-filter-icon">🔍</span>
-                <input type="text" id="cities-panel-filter" class="cities-filter-input" placeholder="اكتب اسم مدينتك للبحث السريع..." />
-              </div>
-
-              <!-- أزرار سريعة للمدن الأكثر طلباً -->
-              <div class="popular-cities-strip">
-                <span class="popular-label">المدن الكبرى الأكثر طلباً:</span>
-                <div class="popular-chips">
-                  <button type="button" class="popular-chip" data-city="الدار البيضاء">الدار البيضاء</button>
-                  <button type="button" class="popular-chip" data-city="الرباط">الرباط</button>
-                  <button type="button" class="popular-chip" data-city="مراكش">مراكش</button>
-                  <button type="button" class="popular-chip" data-city="طنجة">طنجة</button>
-                  <button type="button" class="popular-chip" data-city="فاس">فاس</button>
-                  <button type="button" class="popular-chip" data-city="أكادير">أكادير</button>
-                  <button type="button" class="popular-chip" data-city="مكناس">مكناس</button>
-                  <button type="button" class="popular-chip" data-city="القنيطرة">القنيطرة</button>
-                  <button type="button" class="popular-chip" data-city="وجدة">وجدة</button>
-                  <button type="button" class="popular-chip" data-city="تطوان">تطوان</button>
-                </div>
-              </div>
-
-              <!-- شبكة جميع مدن المغرب بالترتيب الأبجدي -->
-              <div class="all-cities-grid-container" id="all-cities-container">
-                <!-- ديناميكي بواسطة الجافاسكربت -->
+          <!-- Product Card 2: Polo Kids -->
+          <article class="store-product-card" data-product-id="polo" id="card-polo">
+            <div class="product-badge-flag flag-blue">تشكيلة جديدة وحصرية ✨</div>
+            <div class="card-img-wrap">
+              <img src="images/polo-green-marble.jpg" alt="طقم بولو شتوي للأطفال" id="catalog-img-polo" loading="lazy" />
+              <div class="color-mini-preview">
+                <span class="mini-dot active" style="background:#10b981;" title="أخضر رخامي"></span>
+                <span class="mini-dot" style="background:#d4b996;" title="بيج رخامي"></span>
+                <span class="mini-dot" style="background:#64748b;" title="رمادي رخامي"></span>
+                <span class="mini-dot" style="background:#06b6d4;" title="تركواز رخامي"></span>
+                <span class="mini-dot" style="background:#cbd5e1;" title="فضي رخامي"></span>
+                <span class="mini-dot" style="background:#78350f;" title="موكا رخامي"></span>
               </div>
             </div>
-            <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-          </div>
+            <div class="card-details">
+              <span class="card-cat-tag">ملابس أطفال</span>
+              <h3 class="card-title">طقم بولو شتوي فاخر للأطفال (Polo Kids)</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+                <span>5.0 (1,450+ تقييم)</span>
+              </div>
+              <p class="card-excerpt">سويت شيرت كابيشون بسحاب وبنطلون رياضي مبطن بقطن دافئ ومطرز بشعار بولو مع طبعة رخامية عصرية مذهلة.</p>
+              <div class="card-price-row">
+                <div class="card-price">
+                  <span class="amount">199</span> <small>درهم</small>
+                </div>
+                <div class="card-old-price">299 درهم</div>
+                <span class="card-save-badge">وفر 100 د.م</span>
+              </div>
+              <button type="button" class="btn-select-product" data-select-product="polo">
+                <span>🛒 معاينة وطلب هذا المنتج</span>
+              </button>
+            </div>
+          </article>
 
-          <div class="form-field">
-            <label for="customer-address">العنوان أو الحي (اختياري)</label>
-            <input type="text" id="customer-address" name="address" class="form-input" placeholder="اسم الحي أو الشارع لتسهيل وصول الموزع" />
-          </div>
+          <!-- Product Card 3: Spiderman Pajama -->
+          <article class="store-product-card" data-product-id="spiderman" id="card-spiderman">
+            <div class="product-badge-flag flag-gold">عرض التوفير الأكبر 💥</div>
+            <div class="card-img-wrap">
+              <img src="images/trio-pack-1.jpeg" alt="طقم بيجامة سبايدرمان للأطفال" id="catalog-img-spiderman" loading="lazy" />
+              <div class="color-mini-preview">
+                <span class="mini-dot active" style="background:#1e293b;" title="المجموعة 1"></span>
+                <span class="mini-dot" style="background:#059669;" title="المجموعة 2"></span>
+              </div>
+            </div>
+            <div class="card-details">
+              <span class="card-cat-tag">ملابس أطفال</span>
+              <h3 class="card-title">طقم بيجامة سبايدرمان للأطفال (باقة 3 أطقم)</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+                <span>5.0 (2,500+ تقييم)</span>
+              </div>
+              <p class="card-excerpt">باقة ممتازة تحتوي على 3 أطقم قطنية كاملة بألوان مختلفة، رسومات سبايدرمان محبوبة وخياطة مغربية متينة.</p>
+              <div class="card-price-row">
+                <div class="card-price">
+                  <span class="amount">199</span> <small>درهم</small>
+                </div>
+                <div class="card-old-price">329 درهم</div>
+                <span class="card-save-badge">3 أطقم بـ 199 د.م</span>
+              </div>
+              <button type="button" class="btn-select-product" data-select-product="spiderman">
+                <span>🛒 معاينة وطلب هذا المنتج</span>
+              </button>
+            </div>
+          </article>
 
-          <div class="form-field">
-            <label for="customer-note">ملاحظة إضافية (اختياري)</label>
-            <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
-          </div>
-
-          <!-- Big Confirmation Button with ample margin to avoid overlapping -->
-          <button type="submit" class="btn-submit-order" id="btn-submit-order">
-            <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
-            <span class="sub-text">الدفع عند الاستلام بعد معاينة المنتج • التوصيل مجاني 100%</span>
-          </button>
-
-          <!-- Divider Between Order Form and WhatsApp -->
-          <div class="form-or-divider">
-            <span>أو يمكنك الطلب المباشر السريع</span>
-          </div>
-
-          <!-- WhatsApp Direct Order Button -->
-          <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
-            <span>💬</span>
-            <span>طلب مباشر عبر الواتساب بنقرة واحدة</span>
-          </a>
-
-        </form>
+        </div>
       </section>
-    </article>
 
-    <!-- Why Choose Menara Store (Features & Benefits) -->
-    <section class="content-section" aria-label="مميزات متجر منارة">
-      <h2 class="section-title">
-        <span>⭐</span>
-        <span>لماذا يفضل أكثر من 5,000 زبون مغربي التسوق من متجر منارة؟</span>
-      </h2>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon">🌿</div>
-          <h3>أقمشة وخامات أصلية 100%</h3>
-          <p>نختار أفضل أنسجة الصوف والقطن المريح المقاوم للبرد والمناسب للاستخدام اليومي دون تغير في الشكل أو اللون.</p>
+      <!-- Why Choose Menara Store (Features & Benefits) -->
+      <section class="content-section" aria-label="مميزات متجر منارة">
+        <h2 class="section-title">
+          <span>⭐</span>
+          <span>لماذا يفضل أكثر من 5,000 زبون مغربي التسوق من متجر منارة؟</span>
+        </h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🌿</div>
+            <h3>أقمشة وخامات أصلية 100%</h3>
+            <p>نختار أفضل أنسجة الصوف والقطن المريح المقاوم للبرد والمناسب للاستخدام اليومي دون تغير في الشكل أو اللون.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💵</div>
+            <h3>الدفع عند الاستلام بعد الفحص</h3>
+            <p>لا تدفع أي درهم مسبقاً! افتح الطرد، عاين الجودة والمقاس، ثم ادفع للموزع وأنت مرتاح البال تماماً.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🚚</div>
+            <h3>توصيل سريع مجاني لباب المنزل</h3>
+            <p>شبكة توزيع احترافية تغطي جميع مدن ومناطق المغرب خلال 24 إلى 48 ساعة فقط، والتوصيل دائماً بالمجان.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🔄</div>
+            <h3>ضمان الاستبدال الفوري</h3>
+            <p>إذا كان المقاس غير مناسب أو رغبت في تغيير اللون، نوفر لك خدمة استبدال سهلة وسريعة بدون أي تعقيد.</p>
+          </div>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">💵</div>
-          <h3>الدفع عند الاستلام بعد الفحص</h3>
-          <p>لا تدفع أي درهم مسبقاً! افتح الطرد، عاين الجودة والمقاس، ثم ادفع للموزع وأنت مرتاح البال تماماً.</p>
+      </section>
+
+      <!-- Reviews -->
+      <section class="content-section" aria-label="آراء الزبناء">
+        <h2 class="section-title">
+          <span>💬</span>
+          <span>آراء وتقييمات زبنائنا الكرام بالمغرب</span>
+        </h2>
+        <div class="reviews-grid">
+          
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">سفيان العلمي (الدار البيضاء)</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">"المونطو الرمادي صراحة فاق كل التوقعات! خامة ثقيلة ممتازة صوف دافئ وقصّة ملكية معتبرة. التوصيل كان فـ 24 ساعة لعين الذياب والدفع بعد ما شفت البياسة، تبارك الله عليكم."</p>
+            <span class="review-city">تم التحقق من الشراء ✅</span>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">سناء المرابط (طنجة)</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">"خديت لولدي طقم بولو الأخضر الرخامي، التوب قطن غليض ورطب بزاف وسخون للبرد. حتى الرسمة والتطريز د رالف لورين نقي بزاف مابغاش يحيدو. شكراً متجر منارة على المعاملة الطيبة."</p>
+            <span class="review-city">تم التحقق من الشراء ✅</span>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <span class="reviewer-name">يوسف بنجلون (مراكش)</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-text">"خديت المعطف الأسود، أنيق جداً كيجي راقي فـ الخدمة والمناسبات. القياس جا هو هاداك تماماً. خدمة التوصيل محترمة والموزع اتصل بيا قبل ما يوصل. كنصح بالتعامل معهم."</p>
+            <span class="review-city">تم التحقق من الشراء ✅</span>
+          </div>
+
         </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🚚</div>
-          <h3>توصيل سريع مجاني لباب المنزل</h3>
-          <p>شبكة توزيع احترافية تغطي جميع مدن ومناطق المغرب خلال 24 إلى 48 ساعة فقط، والتوصيل دائماً بالمجان.</p>
+      </section>
+
+      <!-- FAQ Accordion -->
+      <section class="content-section" aria-label="الأسئلة الشائعة">
+        <h2 class="section-title">
+          <span>❓</span>
+          <span>الأسئلة الشائعة حول متجر منارة</span>
+        </h2>
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>كيف تتم عملية الطلب والدفع؟</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>العملية بسيطة جداً وبدون أي تعقيد: اضغط على أي منتج تريده للدخول لصفحته المستقلة، ثم املأ استمارة الطلب باسمك ورقم هاتفك ومدينتك. سنتصل بك لتأكيد التفاصيل ونرسل طلبيتك مع الموزع. لا تدفع أي درهم حتى تستلم طردك وتعاينه بيدك!</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>هل التوصيل مجاني حقاً وإلى أي مدن؟</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>نعم! التوصيل مجاني 100% لباب منزلك أو مكان عملك في جميع مدن وقرى ومناطق المغرب بدون أي مصاريف شحن إضافية.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>ماذا لو كان المقاس غير مناسب بعد الاستلام؟</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>رضاكم هو أولويتنا الأولى. إذا كان المقاس صغيراً أو كبيراً، نوفر لك خدمة استبدال المقاس أو اللون مجاناً وسريعاً عبر التواصل معنا على الواتساب.</p>
+            </div>
+          </div>
+
         </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🔄</div>
-          <h3>ضمان الاستبدال الفوري</h3>
-          <p>إذا كان المقاس غير مناسب أو رغبت في تغيير اللون، نوفر لك خدمة استبدال سهلة وسريعة بدون أي تعقيد.</p>
-        </div>
+      </section>
+
+    </div>
+
+    <!-- ==============================================================
+         VIEW 2: صفحة المنتج المستقلة (عرض منتج واحد فقط دون أي منتج تحته)
+         ============================================================== -->
+    <div id="view-product-page" class="app-view" style="display: none;">
+
+      <!-- شريط الرجوع السريع إلى المتجر -->
+      <div class="back-to-store-bar">
+        <button type="button" class="btn-back-to-store" id="btn-back-to-store" aria-label="الرجوع إلى المتجر">
+          <span class="arrow-icon">←</span>
+          <span>الرجوع إلى جميع منتجات المتجر</span>
+        </button>
+        <span class="crumb-product-badge" id="crumb-product-name">معطف رجالي شتوي فاخر</span>
       </div>
-    </section>
 
-
-
-    <!-- Reviews -->
-    <section class="content-section" aria-label="آراء الزبناء">
-      <h2 class="section-title">
-        <span>💬</span>
-        <span>آراء وتقييمات زبنائنا الكرام بالمغرب</span>
-      </h2>
-      <div class="reviews-grid">
+      <!-- Interactive Active Product Showcase & Order Section (الترتيب: اسم المنتوج ثم الصورة ثم المواصفات ثم خيارات الطلب) -->
+      <article class="product-showcase-card" id="product-section">
         
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-name">سفيان العلمي (الدار البيضاء)</span>
-            <span class="review-stars">★★★★★</span>
+        <!-- 1. في الأعلى: اسم المنتوج ومعلومات السعر والتقييم -->
+        <section class="product-header-block" aria-label="اسم ومعلومات المنتوج المختار">
+          <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
+          <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h2>
+          <div class="reviews-summary">
+            <span class="stars">★★★★★</span>
+            <span id="active-product-reviews">4.9 (890+ تقييم إيجابي)</span>
+            <span>•</span>
+            <span style="color:#059669; font-weight:800;">متوفر في المخزون ✅</span>
           </div>
-          <p class="review-text">"المونطو الرمادي صراحة فاق كل التوقعات! خامة ثقيلة ممتازة صوف دافئ وقصّة ملكية معتبرة. التوصيل كان فـ 24 ساعة لعين الذياب والدفع بعد ما شفت البياسة، تبارك الله عليكم."</p>
-          <span class="review-city">تم التحقق من الشراء ✅</span>
-        </div>
 
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-name">سناء المرابط (طنجة)</span>
-            <span class="review-stars">★★★★★</span>
+          <!-- Price Box -->
+          <div class="price-box">
+            <div class="price-current">
+              <span id="price-display">349</span> <small>درهم</small>
+            </div>
+            <div class="price-old" id="old-price-display">499 درهم</div>
+            <span class="discount-pill" id="discount-display">وفر 150 درهم</span>
           </div>
-          <p class="review-text">"خديت لولدي طقم بولو الأخضر الرخامي، التوب قطن غليض ورطب بزاف وسخون للبرد. حتى الرسمة والتطريز د رالف لورين نقي بزاف مابغاش يحيدو. شكراً متجر منارة على المعاملة الطيبة."</p>
-          <span class="review-city">تم التحقق من الشراء ✅</span>
-        </div>
 
-        <div class="review-card">
-          <div class="review-header">
-            <span class="reviewer-name">يوسف بنجلون (مراكش)</span>
-            <span class="review-stars">★★★★★</span>
+          <!-- Trust Capsules -->
+          <div class="trust-row">
+            <div class="trust-capsule">
+              <span class="trust-icon">🚚</span>
+              <span>توصيل مجاني 100%</span>
+            </div>
+            <div class="trust-capsule">
+              <span class="trust-icon">💵</span>
+              <span>الدفع عند الاستلام</span>
+            </div>
+            <div class="trust-capsule">
+              <span class="trust-icon">💯</span>
+              <span>معاينة قبل الدفع</span>
+            </div>
           </div>
-          <p class="review-text">"خديت المعطف الأسود، أنيق جداً كيجي راقي فـ الخدمة والمناسبات. القياس جا هو هاداك تماماً. خدمة التوصيل محترمة والموزع اتصل بيا قبل ما يوصل. كنصح بالتعامل معهم."</p>
-          <span class="review-city">تم التحقق من الشراء ✅</span>
-        </div>
+        </section>
 
-      </div>
-    </section>
-
-    <!-- FAQ Accordion -->
-    <section class="content-section" aria-label="الأسئلة الشائعة">
-      <h2 class="section-title">
-        <span>❓</span>
-        <span>الأسئلة الشائعة حول متجر منارة</span>
-      </h2>
-      <div class="faq-list">
-        
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>كيف تتم عملية الطلب والدفع؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>العملية بسيطة جداً وبدون أي تعقيد: املأ الاستمارة أعلاه باسمك ورقم هاتفك ومدينتك واضغط "تأكيد الطلب". سنتصل بك هاتفياً لتأكيد التفاصيل، ثم نرسل طلبيتك مع الموزع. لا تدفع أي درهم حتى تستلم طردك وتعاينه بيدك!</p>
+        <!-- 2. أسفل الاسم: صورة المنتوج ومعرض الألوان المتاحة -->
+        <section class="product-media-block" aria-label="صورة المنتج المختار">
+          <div class="featured-img-wrap">
+            <img id="main-featured-image" src="images/coat-black.jpg" alt="صورة المنتج المختار" />
+            <span class="offer-tag" id="main-offer-tag">تخفيض خاص 🔥</span>
+            <span class="free-ship-tag">🚚 توصيل مجاني</span>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>هل التوصيل مجاني حقاً وإلى أي مدن؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>نعم! التوصيل مجاني 100% لباب منزلك أو مكان عملك في جميع مدن وقرى ومناطق المغرب بدون أي مصاريف شحن إضافية.</p>
+          <!-- Thumbnails Strip (يتغير تلقائياً حسب المنتج المختار) -->
+          <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور ألوان المنتج المختار">
+            <!-- ديناميكي بواسطة الجافاسكربت -->
           </div>
-        </div>
+        </section>
 
-        <div class="faq-item">
-          <button type="button" class="faq-question">
-            <span>ماذا لو كان المقاس غير مناسب بعد الاستلام؟</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>رضاكم هو أولويتنا الأولى. إذا كان المقاس صغيراً أو كبيراً، نوفر لك خدمة استبدال المقاس أو اللون مجاناً وسريعاً عبر التواصل معنا على الواتساب.</p>
+        <!-- 3. أسفل الصورة: مواصفات ومميزات المنتوج التفصيلية -->
+        <section class="product-specs-card" id="product-specs-box" aria-label="المواصفات والمميزات التفصيلية">
+          <div class="specs-title-row">
+            <span class="specs-icon">📋</span>
+            <h3 class="specs-heading">المواصفات والمميزات التفصيلية لهذا المنتوج:</h3>
           </div>
-        </div>
+          <div class="specs-list" id="specs-list-container">
+            <!-- ديناميكي بواسطة الجافاسكربت حسب المنتوج -->
+          </div>
+        </section>
 
-      </div>
-    </section>
+        <!-- 4. خيارات الألوان والمقاسات والباقة والكمية -->
+        <section class="product-options-block" aria-label="خيارات اللون والمقاس">
+          <!-- Color Selector Group (يتغير ديناميكياً حسب المنتج) -->
+          <div class="selector-group">
+            <div class="selector-label">
+              <span>اختر اللون المفضل:</span>
+              <span class="selected-value" id="selected-color-label">أسود ملكي</span>
+            </div>
+            <div class="color-options-wrap" id="color-options-wrap">
+              <!-- ديناميكي بواسطة الجافاسكربت -->
+            </div>
+          </div>
+
+          <!-- Size Selection Group (ديناميكي: مقاسات ملابس أو أعمار أطفال) -->
+          <div class="selector-group">
+            <div class="selector-label">
+              <span id="size-group-title">اختر المقاس المناسب:</span>
+              <span class="selected-value" id="selected-size-label">L</span>
+            </div>
+            <div class="size-pills" id="size-pills-wrap">
+              <!-- ديناميكي بواسطة الجافاسكربت -->
+            </div>
+          </div>
+
+          <!-- Bundle / Offer Card Group -->
+          <div class="selector-group">
+            <div class="selector-label">
+              <span>باقة الطلب والعروض المتاحة:</span>
+              <span class="selected-value" id="selected-pack-label">الطلب الفردي (1 قطعة)</span>
+            </div>
+            <div class="pack-cards" id="pack-cards-wrap">
+              <!-- ديناميكي بواسطة الجافاسكربت -->
+            </div>
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="selector-group" style="flex-direction:row; align-items:center; justify-content:space-between; margin-top:4px;">
+            <span style="font-size:13.5px; font-weight:800; color:#1e293b;">الكمية:</span>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" id="btn-qty-minus" aria-label="إنقاص الكمية">−</button>
+              <input type="text" class="qty-input" id="qty-input" value="1" readonly />
+              <button type="button" class="qty-btn" id="btn-qty-plus" aria-label="زيادة الكمية">+</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. استمارة تأكيد الطلب المباشر COD -->
+        <section class="order-form-box" id="order-form-container" aria-label="استمارة تأكيد الطلب">
+          <div class="order-form-header">
+            <span class="dot"></span>
+            <span>املأ الاستمارة لتأكيد طلبك الآن</span>
+          </div>
+
+          <form id="order-form" novalidate>
+            
+            <div class="form-field">
+              <label for="customer-name">الاسم الكامل *</label>
+              <input type="text" id="customer-name" name="name" class="form-input" placeholder="مثال: أيوب العلمي" required autocomplete="name" />
+              <div class="field-error" id="name-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+            </div>
+
+            <div class="form-field city-form-field">
+              <div class="field-label-row">
+                <label for="customer-city">المدينة *</label>
+                <button type="button" class="btn-more-cities" id="btn-more-cities" aria-label="عرض جميع مدن المغرب">
+                  <span>المزيد من المدن ▾</span>
+                </button>
+              </div>
+              <div class="city-input-wrap">
+                <input type="text" id="customer-city" name="city" class="form-input" placeholder="اكتب اسم مدينتك للبحث، أو اضغط 'المزيد'..." required autocomplete="off" />
+                <button type="button" class="city-input-btn" id="btn-city-icon" title="استعراض قائمة المدن">📍</button>
+              </div>
+
+              <!-- نافذة منسدلة أنيقة لجميع مدن المغرب مرتبة أبجدياً -->
+              <div class="cities-dropdown-panel" id="cities-dropdown-panel" style="display: none;">
+                <div class="cities-panel-top">
+                  <div class="cities-panel-title">
+                    <span>🇲🇦</span>
+                    <span>جميع مدن ومناطق المغرب (مرتبة أبجدياً)</span>
+                  </div>
+                  <button type="button" class="btn-close-cities" id="btn-close-cities" aria-label="إغلاق">✕</button>
+                </div>
+
+                <!-- شريط بحث داخلي للتصفية السريعة -->
+                <div class="cities-filter-wrap">
+                  <span class="cities-filter-icon">🔍</span>
+                  <input type="text" id="cities-panel-filter" class="cities-filter-input" placeholder="اكتب اسم مدينتك للبحث السريع..." />
+                </div>
+
+                <!-- أزرار سريعة للمدن الأكثر طلباً -->
+                <div class="popular-cities-strip">
+                  <span class="popular-label">المدن الكبرى الأكثر طلباً:</span>
+                  <div class="popular-chips">
+                    <button type="button" class="popular-chip" data-city="الدار البيضاء">الدار البيضاء</button>
+                    <button type="button" class="popular-chip" data-city="الرباط">الرباط</button>
+                    <button type="button" class="popular-chip" data-city="مراكش">مراكش</button>
+                    <button type="button" class="popular-chip" data-city="طنجة">طنجة</button>
+                    <button type="button" class="popular-chip" data-city="فاس">فاس</button>
+                    <button type="button" class="popular-chip" data-city="أكادير">أكادير</button>
+                    <button type="button" class="popular-chip" data-city="مكناس">مكناس</button>
+                    <button type="button" class="popular-chip" data-city="القنيطرة">القنيطرة</button>
+                    <button type="button" class="popular-chip" data-city="وجدة">وجدة</button>
+                    <button type="button" class="popular-chip" data-city="تطوان">تطوان</button>
+                  </div>
+                </div>
+
+                <!-- شبكة جميع مدن المغرب بالترتيب الأبجدي -->
+                <div class="all-cities-grid-container" id="all-cities-container">
+                  <!-- ديناميكي بواسطة الجافاسكربت -->
+                </div>
+              </div>
+              <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+            </div>
+
+            <div class="form-field">
+              <label for="customer-phone">رقم الهاتف (للاتصال بك قبل التوصيل) *</label>
+              <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="06XXXXXXXX أو 07XXXXXXXX" required autocomplete="tel" dir="ltr" style="text-align:right;" />
+              <div class="field-error" id="phone-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+            </div>
+
+            <div class="form-field">
+              <label for="customer-address">العنوان أو الحي (اختياري)</label>
+              <input type="text" id="customer-address" name="address" class="form-input" placeholder="اسم الحي أو الشارع لتسهيل وصول الموزع" />
+            </div>
+
+            <div class="form-field">
+              <label for="customer-note">ملاحظة إضافية (اختياري)</label>
+              <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
+            </div>
+
+            <!-- Big Confirmation Button with ample margin to avoid overlapping -->
+            <button type="submit" class="btn-submit-order" id="btn-submit-order">
+              <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
+              <span class="sub-text">الدفع عند الاستلام بعد معاينة المنتج • التوصيل مجاني 100%</span>
+            </button>
+
+            <!-- Divider Between Order Form and WhatsApp -->
+            <div class="form-or-divider">
+              <span>أو يمكنك الطلب المباشر السريع</span>
+            </div>
+
+            <!-- WhatsApp Direct Order Button -->
+            <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
+              <span>💬</span>
+              <span>طلب مباشر عبر الواتساب بنقرة واحدة</span>
+            </a>
+
+          </form>
+        </section>
+      </article>
+
+    </div>
+
+  </main>
 
   </main>
 
