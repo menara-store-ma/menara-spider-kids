@@ -349,229 +349,211 @@
         <span class="crumb-product-badge" id="crumb-product-name">معطف رجالي شتوي فاخر</span>
       </div>
 
-      <!-- Interactive Active Product Showcase & Order Section (الترتيب: اسم المنتوج ثم الصورة ثم المواصفات ثم خيارات الطلب) -->
+      <!-- Interactive Active Product Showcase & Order Section (2 Columns on Desktop, 1 Column on Mobile matching user screenshots) -->
       <article class="product-showcase-card" id="product-section">
         
-        <!-- 1. في الأعلى: اسم المنتوج ومعلومات السعر والتقييم -->
-        <section class="product-header-block" aria-label="اسم ومعلومات المنتوج المختار">
-          <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
-          <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h2>
-          <div class="reviews-summary">
-            <span class="stars">★★★★★</span>
-            <span id="active-product-reviews">4.9 (890+ تقييم إيجابي)</span>
-            <span>•</span>
-            <span style="color:#059669; font-weight:800;">متوفر في المخزون ✅</span>
-          </div>
-
-          <!-- Price Box -->
-          <div class="price-box">
-            <div class="price-current">
-              <span id="price-display">389</span> <small>درهم</small>
-            </div>
-            <div class="price-old" id="old-price-display">549 درهم</div>
-            <span class="discount-pill" id="discount-display">وفر 160 درهم</span>
-          </div>
-
-          <!-- Trust Capsules -->
-          <div class="trust-row">
-            <div class="trust-capsule">
-              <span class="trust-icon">🚚</span>
-              <span>توصيل مجاني 100%</span>
-            </div>
-            <div class="trust-capsule">
-              <span class="trust-icon">💵</span>
-              <span>الدفع عند الاستلام</span>
-            </div>
-            <div class="trust-capsule">
-              <span class="trust-icon">💯</span>
-              <span>معاينة قبل الدفع</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- 2. أسفل الاسم: صورة المنتوج ومعرض الألوان المتاحة -->
-        <section class="product-media-block" aria-label="صورة المنتج المختار">
+        <!-- Right Column (Desktop) / Top (Mobile): Featured Image + Color Thumbnails -->
+        <section class="product-media-column" aria-label="صورة المنتج المختار وألوانه">
           <div class="featured-img-wrap">
             <img id="main-featured-image" src="images/coat-black.jpg" alt="صورة المنتج المختار" />
             <span class="offer-tag" id="main-offer-tag">تخفيض خاص 🔥</span>
             <span class="free-ship-tag">🚚 توصيل مجاني</span>
           </div>
 
-          <!-- Thumbnails Strip (يتغير تلقائياً حسب المنتج المختار) -->
+          <!-- Thumbnails Row (Clean strip of color photos right below the main photo) -->
           <div class="thumbnails-scroll" id="thumbnails-container" aria-label="صور ألوان المنتج المختار">
-            <!-- ديناميكي بواسطة الجافاسكربت -->
+            <!-- Dynamic thumbnails via JS -->
           </div>
         </section>
 
-        <!-- 3. أسفل الصورة: مواصفات ومميزات المنتوج التفصيلية -->
-        <section class="product-specs-card" id="product-specs-box" aria-label="المواصفات والمميزات التفصيلية">
-          <div class="specs-title-row">
-            <span class="specs-icon">📋</span>
-            <h3 class="specs-heading">المواصفات والمميزات التفصيلية لهذا المنتوج:</h3>
-          </div>
-          <div class="specs-list" id="specs-list-container">
-            <!-- ديناميكي بواسطة الجافاسكربت حسب المنتوج -->
-          </div>
-        </section>
-
-        <!-- 4. خيارات الألوان والمقاسات والباقة والكمية -->
-        <section class="product-options-block" aria-label="خيارات اللون والمقاس">
-          <!-- Color Selector Group (يتغير ديناميكياً حسب المنتج) -->
-          <div class="selector-group">
-            <div class="selector-label">
-              <span>اختر اللون المفضل:</span>
-              <span class="selected-value" id="selected-color-label">أسود ملكي</span>
-            </div>
-            <div class="color-options-wrap" id="color-options-wrap">
-              <!-- ديناميكي بواسطة الجافاسكربت -->
-            </div>
-          </div>
-
-          <!-- Size Selection Group (ديناميكي: مقاسات ملابس أو أعمار أطفال) -->
-          <div class="selector-group">
-            <div class="selector-label">
-              <span id="size-group-title">اختر المقاس المناسب:</span>
-              <span class="selected-value" id="selected-size-label">L</span>
-            </div>
-            <div class="size-pills" id="size-pills-wrap">
-              <!-- ديناميكي بواسطة الجافاسكربت -->
-            </div>
-          </div>
-
-          <!-- Bundle / Offer Card Group -->
-          <div class="selector-group">
-            <div class="selector-label">
-              <span>باقة الطلب والعروض المتاحة:</span>
-              <span class="selected-value" id="selected-pack-label">الطلب الفردي (1 قطعة)</span>
-            </div>
-            <div class="pack-cards" id="pack-cards-wrap">
-              <!-- ديناميكي بواسطة الجافاسكربت -->
-            </div>
-          </div>
-
-          <!-- Quantity Selector -->
-          <div class="selector-group" style="flex-direction:row; align-items:center; justify-content:space-between; margin-top:4px;">
-            <span style="font-size:13.5px; font-weight:800; color:#1e293b;">الكمية:</span>
-            <div class="qty-control">
-              <button type="button" class="qty-btn" id="btn-qty-minus" aria-label="إنقاص الكمية">−</button>
-              <input type="text" class="qty-input" id="qty-input" value="1" readonly />
-              <button type="button" class="qty-btn" id="btn-qty-plus" aria-label="زيادة الكمية">+</button>
-            </div>
-          </div>
-        </section>
-
-        <!-- 5. استمارة تأكيد الطلب المباشر COD -->
-        <section class="order-form-box" id="order-form-container" aria-label="استمارة تأكيد الطلب">
-          <div class="order-form-header">
-            <span class="dot"></span>
-            <span>املأ الاستمارة لتأكيد طلبك الآن</span>
-          </div>
-
-          <form id="order-form" novalidate>
+        <!-- Left Column (Desktop) / Bottom (Mobile): Title, Rating, Price, Options & Order Form -->
+        <section class="product-info-column" aria-label="معلومات المنتج واستمارة الطلب">
+          
+          <!-- Product Title, Rating & Price -->
+          <div class="product-header-block">
+            <div class="active-product-kicker" id="active-product-kicker">🧥 أزياء رجالية فاخرة</div>
+            <h2 class="product-title" id="active-product-title">معطف رجالي شتوي فاخر (مونطو كلاسيكي كاشمير)</h2>
             
-            <div class="form-field">
-              <label for="customer-name">الاسم الكامل *</label>
-              <input type="text" id="customer-name" name="name" class="form-input" placeholder="مثال: أيوب العلمي" required autocomplete="name" />
-              <div class="field-error" id="name-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+            <div class="reviews-summary">
+              <span class="stars">★★★★★</span>
+              <span id="active-product-reviews">(+500 تقييم)</span>
             </div>
 
-            <div class="form-field city-form-field">
-              <div class="field-label-row">
-                <label for="customer-city">المدينة *</label>
-                <button type="button" class="btn-more-cities" id="btn-more-cities" aria-label="عرض جميع مدن المغرب">
-                  <span>المزيد من المدن ▾</span>
-                </button>
+            <!-- Price Display (Large bold green) -->
+            <div class="price-box">
+              <div class="price-current">
+                <span id="price-display">389</span> <small>درهم</small>
               </div>
-              <div class="city-input-wrap">
-                <input type="text" id="customer-city" name="city" class="form-input" placeholder="اكتب اسم مدينتك للبحث، أو اضغط 'المزيد'..." required autocomplete="off" />
-                <button type="button" class="city-input-btn" id="btn-city-icon" title="استعراض قائمة المدن">📍</button>
+              <div class="price-old" id="old-price-display">549 درهم</div>
+              <span class="discount-pill" id="discount-display">وفر 160 درهم</span>
+            </div>
+
+            <!-- Trust Capsules: 🚚 توصيل مجاني • 🛡️ ضمان الجودة • 💵 الدفع عند الاستلام -->
+            <div class="trust-row">
+              <div class="trust-capsule">
+                <span class="trust-icon">🚚</span>
+                <span>توصيل مجاني</span>
+              </div>
+              <div class="trust-capsule">
+                <span class="trust-icon">🛡️</span>
+                <span>ضمان الجودة</span>
+              </div>
+              <div class="trust-capsule">
+                <span class="trust-icon">💵</span>
+                <span>الدفع عند الاستلام</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selectors: Age/Size, Color, Quantity -->
+          <div class="product-options-block">
+            
+            <!-- Size / Age Selector Group -->
+            <div class="selector-group" id="size-group-container">
+              <div class="selector-label">
+                <span id="size-group-title">السن:</span>
+                <span class="selected-value" id="selected-size-label">5-6</span>
+              </div>
+              <div class="size-pills" id="size-pills-wrap">
+                <!-- Dynamic size pills via JS -->
+              </div>
+            </div>
+
+            <!-- Color Selector Group -->
+            <div class="selector-group" id="color-group-container">
+              <div class="selector-label">
+                <span>اللون:</span>
+                <span class="selected-value" id="selected-color-label">بيج غامق</span>
+              </div>
+              <div class="color-options-wrap" id="color-options-wrap">
+                <!-- Dynamic color swatch pills via JS -->
+              </div>
+            </div>
+
+            <!-- Quantity Selector with In Stock Badge -->
+            <div class="qty-selector-row">
+              <div class="qty-label-part">
+                <span class="qty-title">الكمية:</span>
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" id="btn-qty-minus" aria-label="إنقاص الكمية">−</button>
+                  <input type="text" class="qty-input" id="qty-input" value="1" readonly />
+                  <button type="button" class="qty-btn" id="btn-qty-plus" aria-label="زيادة الكمية">+</button>
+                </div>
+              </div>
+              <span class="in-stock-badge">متوفر في المخزون ✅</span>
+            </div>
+
+          </div>
+
+          <!-- Order Form Card -->
+          <div class="order-form-box" id="order-form-container" aria-label="استمارة الطلب المباشر">
+            <div class="order-form-header">
+              <span class="header-icon">📋</span>
+              <span>اطلب الآن مباشرة</span>
+            </div>
+
+            <!-- The Order Form -->
+            <form id="order-form" novalidate>
+              
+              <div class="form-field">
+                <label for="customer-name">الاسم الكامل *</label>
+                <input type="text" id="customer-name" name="name" class="form-input" placeholder="أدخل اسمك هنا" required autocomplete="name" />
+                <div class="field-error" id="name-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
               </div>
 
-              <!-- نافذة منسدلة أنيقة لجميع مدن المغرب مرتبة أبجدياً -->
-              <div class="cities-dropdown-panel" id="cities-dropdown-panel" style="display: none;">
-                <div class="cities-panel-top">
-                  <div class="cities-panel-title">
-                    <span>🇲🇦</span>
-                    <span>جميع مدن ومناطق المغرب (مرتبة أبجدياً)</span>
+              <div class="form-field">
+                <label for="customer-phone">رقم الهاتف *</label>
+                <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="06XXXXXXXX" required autocomplete="tel" dir="ltr" style="text-align:right;" />
+                <div class="field-error" id="phone-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
+              </div>
+
+              <div class="form-field city-form-field">
+                <div class="field-label-row">
+                  <label for="customer-city">العنوان (المدينة والحي) *</label>
+                  <button type="button" class="btn-more-cities" id="btn-more-cities" aria-label="عرض قائمة المدن">
+                    <span>قائمة المدن ▾</span>
+                  </button>
+                </div>
+                <div class="city-input-wrap">
+                  <input type="text" id="customer-city" name="city" class="form-input" placeholder="المدينة، الحي، الشارع" required autocomplete="off" />
+                  <button type="button" class="city-input-btn" id="btn-city-icon" title="استعراض قائمة المدن">📍</button>
+                </div>
+
+                <!-- Moroccan Cities Panel -->
+                <div class="cities-dropdown-panel" id="cities-dropdown-panel" style="display: none;">
+                  <div class="cities-panel-top">
+                    <div class="cities-panel-title">
+                      <span>🇲🇦</span>
+                      <span>مدن ومناطق المغرب</span>
+                    </div>
+                    <button type="button" class="btn-close-cities" id="btn-close-cities" aria-label="إغلاق">✕</button>
                   </div>
-                  <button type="button" class="btn-close-cities" id="btn-close-cities" aria-label="إغلاق">✕</button>
-                </div>
-
-                <!-- شريط بحث داخلي للتصفية السريعة -->
-                <div class="cities-filter-wrap">
-                  <span class="cities-filter-icon">🔍</span>
-                  <input type="text" id="cities-panel-filter" class="cities-filter-input" placeholder="اكتب اسم مدينتك للبحث السريع..." />
-                </div>
-
-                <!-- أزرار سريعة للمدن الأكثر طلباً -->
-                <div class="popular-cities-strip">
-                  <span class="popular-label">المدن الكبرى الأكثر طلباً:</span>
-                  <div class="popular-chips">
-                    <button type="button" class="popular-chip" data-city="الدار البيضاء">الدار البيضاء</button>
-                    <button type="button" class="popular-chip" data-city="الرباط">الرباط</button>
-                    <button type="button" class="popular-chip" data-city="مراكش">مراكش</button>
-                    <button type="button" class="popular-chip" data-city="طنجة">طنجة</button>
-                    <button type="button" class="popular-chip" data-city="فاس">فاس</button>
-                    <button type="button" class="popular-chip" data-city="أكادير">أكادير</button>
-                    <button type="button" class="popular-chip" data-city="مكناس">مكناس</button>
-                    <button type="button" class="popular-chip" data-city="القنيطرة">القنيطرة</button>
-                    <button type="button" class="popular-chip" data-city="وجدة">وجدة</button>
-                    <button type="button" class="popular-chip" data-city="تطوان">تطوان</button>
+                  <div class="cities-filter-wrap">
+                    <span class="cities-filter-icon">🔍</span>
+                    <input type="text" id="cities-panel-filter" class="cities-filter-input" placeholder="اكتب اسم مدينتك..." />
                   </div>
+                  <div class="popular-cities-strip">
+                    <div class="popular-chips">
+                      <button type="button" class="popular-chip" data-city="الدار البيضاء">الدار البيضاء</button>
+                      <button type="button" class="popular-chip" data-city="الرباط">الرباط</button>
+                      <button type="button" class="popular-chip" data-city="مراكش">مراكش</button>
+                      <button type="button" class="popular-chip" data-city="طنجة">طنجة</button>
+                      <button type="button" class="popular-chip" data-city="فاس">فاس</button>
+                      <button type="button" class="popular-chip" data-city="أكادير">أكادير</button>
+                      <button type="button" class="popular-chip" data-city="مكناس">مكناس</button>
+                      <button type="button" class="popular-chip" data-city="القنيطرة">القنيطرة</button>
+                    </div>
+                  </div>
+                  <div class="all-cities-grid-container" id="all-cities-container"></div>
                 </div>
-
-                <!-- شبكة جميع مدن المغرب بالترتيب الأبجدي -->
-                <div class="all-cities-grid-container" id="all-cities-container">
-                  <!-- ديناميكي بواسطة الجافاسكربت -->
-                </div>
+                <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
               </div>
-              <div class="field-error" id="city-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-            </div>
 
-            <div class="form-field">
-              <label for="customer-phone">رقم الهاتف (للاتصال بك قبل التوصيل) *</label>
-              <input type="tel" id="customer-phone" name="phone" class="form-input" placeholder="06XXXXXXXX أو 07XXXXXXXX" required autocomplete="tel" dir="ltr" style="text-align:right;" />
-              <div class="field-error" id="phone-error" style="color:#ef4444; font-size:12px; font-weight:700; display:none;"></div>
-            </div>
-
-            <div class="form-field">
-              <label for="customer-address">العنوان أو الحي (اختياري)</label>
-              <input type="text" id="customer-address" name="address" class="form-input" placeholder="اسم الحي أو الشارع لتسهيل وصول الموزع" />
-            </div>
-
-            <div class="form-field">
-              <label for="customer-note">ملاحظة إضافية (اختياري)</label>
-              <input type="text" id="customer-note" name="note" class="form-input" placeholder="مثال: يرجى الاتصال بعد صلاة العصر" />
-            </div>
-
-            <!-- Inline Success Notification (Shown on submit without popup modal) -->
-            <div class="order-inline-success" id="order-inline-success" style="display:none;" role="status">
-              <span class="ois-icon">✅</span>
-              <div class="ois-content">
-                <strong>تم تسجيل طلبكم بنجاح!</strong>
-                <p>شكراً لثقتكم في متجر منارة. سنتصل بكم هاتفياً لتأكيد الشحن والتوصيل المجاني لباب منزلكم.</p>
+              <!-- Note (Optional) -->
+              <div class="form-field">
+                <label for="customer-note">ملاحظة إضافية (اختياري)</label>
+                <input type="text" id="customer-note" name="note" class="form-input" placeholder="أي تفاصيل خاصة بتوقيت التوصيل" />
               </div>
+
+              <!-- Action Button 1: ⚡ اشتري الآن (Coral / Red) -->
+              <button type="submit" class="btn-submit-order" id="btn-submit-order">
+                <span id="submit-text">⚡ اشتري الآن</span>
+              </button>
+
+              <!-- Delivery Guarantee Banner 2: 🚚 التوصيل خلال 24-48 ساعة - الدفع عند الاستلام (Mint Green) -->
+              <div class="delivery-guarantee-banner">
+                <span>🚚 التوصيل خلال 24-48 ساعة - الدفع عند الاستلام</span>
+              </div>
+
+              <!-- Secondary WhatsApp Direct Order Button -->
+              <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
+                <span>💬</span>
+                <span>طلب مباشر عبر الواتساب فوراً</span>
+              </a>
+
+            </form>
+
+            <!-- Success Confirmation Card (Matches Image 2 exactly, shown upon submission) -->
+            <div class="order-success-card" id="order-success-card" style="display:none;" role="status">
+              <div class="success-confetti-icon">🎉</div>
+              <h3 class="success-heading">تم استلام طلبك بنجاح!</h3>
+              <p class="success-order-num">شكراً لثقتكم في متجر منارة. رقم طلبكم هو: <strong id="success-order-id">#MNR-------</strong></p>
+              <p class="success-desc">سيتصل بكم فريق خدمة الزبناء قريباً لتأكيد تفاصيل الشحن والتوصيل المجاني لباب منزلكم.</p>
+              
+              <a href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-success" id="btn-whatsapp-success">
+                <span>💬</span>
+                <span>تأكيد الطلب عبر الواتساب فوراً</span>
+              </a>
+
+              <button type="button" class="btn-another-order" id="btn-another-order">
+                <span>تسوق منتج آخر 🛍️</span>
+              </button>
             </div>
 
-            <!-- Big Confirmation Button with ample margin to avoid overlapping -->
-            <button type="submit" class="btn-submit-order" id="btn-submit-order">
-              <span id="submit-text">اضغط هنا لتأكيد الطلب الآن 🛍️</span>
-              <span class="sub-text">الدفع عند الاستلام بعد معاينة المنتج • التوصيل مجاني 100%</span>
-            </button>
+          </div>
 
-            <!-- Divider Between Order Form and WhatsApp -->
-            <div class="form-or-divider">
-              <span>أو يمكنك الطلب المباشر السريع</span>
-            </div>
-
-            <!-- WhatsApp Direct Order Button -->
-            <a href="https://wa.me/212710054951?text=سلام%20عليكم،%20بغيت%20نطلب" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-order" id="btn-direct-whatsapp">
-              <span>💬</span>
-              <span>طلب مباشر عبر الواتساب بنقرة واحدة</span>
-            </a>
-
-          </form>
         </section>
+
       </article>
 
     </div>

@@ -22,10 +22,8 @@
       kicker: "🧥 أزياء رجالية فاخرة",
       basePrice: 389,
       baseOldPrice: 549,
-      doublePrice: 729, // توفير إضافي لمعطفين
-      doubleOldPrice: 1098,
-      reviews: "4.9 (890+ تقييم إيجابي)",
-      sizeLabel: "اختر المقاس المناسب:",
+      reviews: "4.9 (+500 تقييم)",
+      sizeLabel: "المقاس:",
       defaultSize: "L",
       sizes: ["M", "L", "XL", "XXL"],
       colors: [
@@ -40,42 +38,19 @@
         { icon: "📏", label: "المقاسات المتوفرة", text: "M - L - XL - XXL (مقاسات مضبوطة إيطالية تناسب الجميع)" },
         { icon: "🚚", label: "الضمان والاستلام", text: "توصيل سريع مجاني لجميع مدن المغرب مع حق فتح الطرد ومعاينة القياس والجودة قبل الدفع" },
       ],
-      packs: [
-        {
-          id: "pack1",
-          name: "معطف واحد (1 قطعة)",
-          badge: "الخيار المفضل 👍",
-          isDouble: false,
-          desc: "معطف كاشمير فاخر واحد باللون والمقاس المختار مع توصيل مجاني",
-          piecesCount: 1,
-        },
-        {
-          id: "pack2",
-          name: "عرض معطفين (2 قطع - خصم خاص)",
-          badge: "وفر 49 د.م إضافية 🔥",
-          isDouble: true,
-          desc: "احصل على معطفين بألوان أو مقاسات من اختيارك بسعر مخفض 729 درهم",
-          piecesCount: 2,
-        },
-      ],
     },
     polo: {
       id: "polo",
       category: "polo",
-      name: "طقم بولو شتوي فاخر للأطفال (2 قطع بـ 199 درهم) - Polo Kids",
+      name: "طقم أولادي شتوي دافئ وأنيق (2 قطع بـ 199 درهم) - Polo Kids",
       shortName: "طقم بولو قطعتين للأطفال",
       kicker: "👕 ملابس أطفال راقية",
       basePrice: 199,
       baseOldPrice: 299,
-      doublePrice: 369, // طقمين بـ 369
-      doubleOldPrice: 598,
-      reviews: "5.0 (1,450+ تقييم إيجابي)",
-      sizeLabel: "اختر عمر الطفل (المقاس):",
-      defaultSize: "6 سنوات",
-      sizes: [
-        "4 سنوات", "5 سنوات", "6 سنوات", "7 سنوات", "8 سنوات",
-        "9 سنوات", "10 سنوات", "11 سنة", "12 سنة", "13 سنة", "14 سنة"
-      ],
+      reviews: "5.0 (+500 تقييم)",
+      sizeLabel: "السن:",
+      defaultSize: "5-6",
+      sizes: ["4-5", "5-6", "7-8", "9-10", "11-12", "13-14"],
       colors: [
         { id: "green-marble", name: "أخضر رخامي", hex: "#10b981", img: "images/polo-green-marble.jpg", badge: "جديد 2026" },
         { id: "beige-marble", name: "بيج رخامي", hex: "#d4b996", img: "images/polo-beige-marble.jpg", badge: "راقي وجذاب" },
@@ -91,42 +66,19 @@
         { icon: "📏", label: "الأعمار والمقاسات", text: "متوفر لجميع الفئات العمرية من 4 سنوات حتى 14 سنة كاملة بقصات مريحة ومضبوطة" },
         { icon: "🚚", label: "الضمان والاستلام", text: "توصيل مجاني لباب منزلك مع حق المعاينة وقياس الطقم قبل الدفع مع ضمان الاستبدال" },
       ],
-      packs: [
-        {
-          id: "pack1",
-          name: "طقم واحد (2 قطع: جاكيت كابيشون + بنطلون)",
-          badge: "الخيار القياسي 👍",
-          isDouble: false,
-          desc: "طقم شتوي كامل من قطعتين مبطن بقطن دافئ بـ 199 درهم فقط",
-          piecesCount: 2,
-        },
-        {
-          id: "pack2",
-          name: "عرض طقمين بولو (4 قطع كاملة)",
-          badge: "وفر 30 د.م إضافية 💥",
-          isDouble: true,
-          desc: "احصل على طقمين للأطفال (4 قطع كاملة) بألوان ومقاسات من اختيارك بـ 369 درهم",
-          piecesCount: 4,
-        },
-      ],
     },
     spiderman: {
       id: "spiderman",
       category: "pajama",
-      name: "طقم بيجامة سبايدرمان للأطفال (باقة 3 أطقم)",
+      name: "طقم بيجامة سبايدرمان للأطفال (باقة 3 أطقم بـ 199 درهم)",
       shortName: "بيجامة سبايدرمان للأطفال",
       kicker: "🕷️ بيجامات أطفال شتوية",
       basePrice: 199,
       baseOldPrice: 329,
-      doublePrice: 379, // باقتين (6 أطقم)
-      doubleOldPrice: 658,
-      reviews: "5.0 (2,500+ تقييم إيجابي)",
-      sizeLabel: "اختر عمر الطفل (المقاس):",
-      defaultSize: "5 سنوات",
-      sizes: [
-        "سنة واحدة", "سنتين", "3 سنوات", "4 سنوات", "5 سنوات",
-        "6 سنوات", "7 سنوات", "8 سنوات", "9 سنوات", "10 سنوات"
-      ],
+      reviews: "5.0 (+500 تقييم)",
+      sizeLabel: "السن:",
+      defaultSize: "4-5",
+      sizes: ["2-3", "4-5", "6-7", "8-9", "10"],
       colors: [
         { id: "pack1", name: "المجموعة 1 (أسود + أزرق + رمادي)", hex: "#1e293b", img: "images/trio-pack-1.jpeg", badge: "المجموعة 1" },
         { id: "pack2", name: "المجموعة 2 (أخضر + عنابي + بيج)", hex: "#059669", img: "images/trio-pack-2.jpeg", badge: "المجموعة 2" },
@@ -138,24 +90,6 @@
         { icon: "📏", label: "الأعمار والمقاسات", text: "تشكيلة للأعمار من سنة واحدة إلى 10 سنوات كاملة بخياطة متينة ومريحة" },
         { icon: "🚚", label: "الضمان والاستلام", text: "3 أطقم بـ 199 درهم فقط مع التوصيل المجاني والدفع بعد الاستلام والمعاينة" },
       ],
-      packs: [
-        {
-          id: "pack1",
-          name: "باقة 3 أطقم كاملة (199 درهم)",
-          badge: "3 أطقم بـ 199 د.م 🔥",
-          isDouble: false,
-          desc: "باقة كاملة تشمل 3 أطقم قطنية بيجامة سبايدرمان بألوان منوعة",
-          piecesCount: 3,
-        },
-        {
-          id: "pack2",
-          name: "العرض المزدوج (6 أطقم كاملة بـ 379 درهم)",
-          badge: "وفر 279 د.م الأكبر 💥",
-          isDouble: true,
-          desc: "المجموعتين معاً: 6 أطقم كاملة لكل فصول الشتاء بسعر 379 درهم فقط",
-          piecesCount: 6,
-        },
-      ],
     },
   };
 
@@ -165,9 +99,6 @@
     selectedColorId: "black",
     selectedColorName: "أسود ملكي",
     selectedSize: "L",
-    selectedPackId: "pack1",
-    selectedPackName: "معطف واحد (1 قطعة)",
-    isDouble: false,
     quantity: 1,
     submitting: false,
     checkoutTracked: false,
@@ -184,9 +115,6 @@
   const sizeGroupTitle = $("#size-group-title");
   const sizePillsWrap = $("#size-pills-wrap");
   const selectedSizeLabel = $("#selected-size-label");
-  const packCardsWrap = $("#pack-cards-wrap");
-  const selectedPackLabel = $("#selected-pack-label");
-  const specsListContainer = $("#specs-list-container");
   const btnQtyMinus = $("#btn-qty-minus");
   const btnQtyPlus = $("#btn-qty-plus");
   const qtyInput = $("#qty-input");
@@ -204,13 +132,16 @@
   const btnSubmitOrder = $("#btn-submit-order");
   const submitText = $("#submit-text");
   const btnDirectWhatsapp = $("#btn-direct-whatsapp");
-  const orderInlineSuccess = $("#order-inline-success");
+  const orderSuccessCard = $("#order-success-card");
+  const successOrderId = $("#success-order-id");
+  const btnWhatsappSuccess = $("#btn-whatsapp-success");
+  const btnAnotherOrder = $("#btn-another-order");
 
   /* ---------------- Price Calculations ---------------- */
   function calculateTotal() {
     const prod = PRODUCTS[state.currentProductId] || PRODUCTS.coat;
-    const unitPrice = state.isDouble ? prod.doublePrice : prod.basePrice;
-    const unitOldPrice = state.isDouble ? prod.doubleOldPrice : prod.baseOldPrice;
+    const unitPrice = prod.basePrice;
+    const unitOldPrice = prod.baseOldPrice;
     const total = unitPrice * state.quantity;
     const oldTotal = unitOldPrice * state.quantity;
     const savings = oldTotal - total;
@@ -233,7 +164,7 @@
     if (!btnDirectWhatsapp) return;
     const { total, prod } = calculateTotal();
     const customer = (customerName && customerName.value.trim()) || "زبون متجر منارة";
-    const msg = `سلام عليكم متجر منارة، بغيت نطلب ${prod.name} (اللون: ${state.selectedColorName} - المقاس: ${state.selectedSize} - الباقة: ${state.selectedPackName} - الكمية: ${state.quantity}) بمبلغ إجمالي ${total} درهم مع التوصيل المجاني. الاسم: ${customer}.`;
+    const msg = `سلام عليكم متجر منارة، بغيت نطلب ${prod.name} (اللون: ${state.selectedColorName} - المقاس: ${state.selectedSize} - الكمية: ${state.quantity}) بمبلغ إجمالي ${total} درهم مع التوصيل المجاني. الاسم: ${customer}.`;
     btnDirectWhatsapp.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(msg)}`;
   }
 
@@ -268,20 +199,7 @@
       }).join("");
     }
 
-    // 3. Render Specifications (مواصفات ومميزات المنتوج أسفل الصورة)
-    if (specsListContainer && Array.isArray(prod.specs)) {
-      specsListContainer.innerHTML = prod.specs.map((s) => `
-        <div class="spec-item">
-          <span class="spec-icon">${s.icon}</span>
-          <div class="spec-details">
-            <span class="spec-label">${s.label}:</span>
-            <span class="spec-text">${s.text}</span>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    // 4. Render Color Swatches
+    // 3. Render Color Swatches / Pills (مطابق للصورة تماماً)
     if (colorOptionsWrap) {
       colorOptionsWrap.innerHTML = prod.colors.map((c) => {
         const isActive = c.id === state.selectedColorId;
@@ -294,7 +212,7 @@
       }).join("");
     }
 
-    // 5. Render Size Pills
+    // 4. Render Size Pills (مطابق للصورة تماماً)
     if (sizePillsWrap) {
       sizePillsWrap.innerHTML = prod.sizes.map((s) => {
         const isActive = s === state.selectedSize;
@@ -306,37 +224,11 @@
       }).join("");
     }
 
-    // 6. Render Pack Cards
-    if (packCardsWrap) {
-      packCardsWrap.innerHTML = prod.packs.map((pk) => {
-        const isActive = pk.id === state.selectedPackId;
-        const packPrice = pk.isDouble ? prod.doublePrice : prod.basePrice;
-        const packOldPrice = pk.isDouble ? prod.doubleOldPrice : prod.baseOldPrice;
-        return `
-          <div class="pack-card ${isActive ? "active" : ""}" data-pack-id="${pk.id}" data-is-double="${pk.isDouble}">
-            <div class="pack-badge">${pk.badge}</div>
-            <div class="pack-content">
-              <span class="pack-radio-circle"></span>
-              <div class="pack-text">
-                <div class="pack-title">${pk.name}</div>
-                <div class="pack-sub">${pk.desc}</div>
-              </div>
-            </div>
-            <div class="pack-pricing">
-              <span class="pack-price">${packPrice} د.م</span>
-              <span class="pack-old">${packOldPrice} د.م</span>
-            </div>
-          </div>
-        `;
-      }).join("");
-    }
-
-    // 7. Update Labels
+    // 5. Update Labels
     if (selectedColorLabel) selectedColorLabel.textContent = state.selectedColorName;
     if (selectedSizeLabel) selectedSizeLabel.textContent = state.selectedSize;
-    if (selectedPackLabel) selectedPackLabel.textContent = state.selectedPackName;
 
-    // 8. Update Active State in Catalog Cards
+    // 6. Update Active State in Catalog Cards
     $$(".store-product-card").forEach((card) => {
       const pid = card.getAttribute("data-product-id");
       if (pid === state.currentProductId) {
@@ -370,11 +262,6 @@
     } else {
       state.selectedSize = prod.defaultSize || prod.sizes[0];
     }
-
-    // Reset pack to pack1 (single)
-    state.selectedPackId = "pack1";
-    state.selectedPackName = prod.packs[0].name;
-    state.isDouble = false;
 
     renderProductUI();
   }
@@ -457,32 +344,6 @@
       if (selectedSizeLabel) selectedSizeLabel.textContent = state.selectedSize;
 
       updateWhatsAppDirectLink();
-    });
-  }
-
-  /* ---------------- Pack Cards ---------------- */
-  function initPackCards() {
-    if (!packCardsWrap) return;
-
-    packCardsWrap.addEventListener("click", (e) => {
-      const card = e.target.closest(".pack-card");
-      if (!card) return;
-
-      $$("#pack-cards-wrap .pack-card").forEach((c) => c.classList.remove("active"));
-      card.classList.add("active");
-
-      const packId = card.getAttribute("data-pack-id");
-      const isDouble = card.getAttribute("data-is-double") === "true";
-      const prod = PRODUCTS[state.currentProductId];
-      const packObj = prod.packs.find((pk) => pk.id === packId) || prod.packs[0];
-
-      state.selectedPackId = packId;
-      state.selectedPackName = packObj.name;
-      state.isDouble = isDouble;
-
-      if (selectedPackLabel) selectedPackLabel.textContent = packObj.name;
-
-      updatePriceUI();
     });
   }
 
@@ -932,9 +793,14 @@
 
       // Prepare order object with complete details for dashboard and operator
       const { total, unitPrice, prod } = calculateTotal();
-      const orderId = `#${Math.floor(100000 + Math.random() * 900000)}`;
+      const orderId = `#MNR-${Math.floor(100000 + Math.random() * 900000)}`;
       const nowIso = new Date().toISOString();
       const curColor = prod.colors.find((c) => c.id === state.selectedColorId) || prod.colors[0];
+
+      const piecesCount = state.quantity * (state.currentProductId === "spiderman" ? 3 : (state.currentProductId === "polo" ? 2 : 1));
+      const packName = state.currentProductId === "coat" 
+        ? `${state.quantity} معطف كاشمير فاخر` 
+        : (state.currentProductId === "polo" ? `${state.quantity * 2} قطع (${state.quantity} طقم بولو شتوي)` : `${state.quantity * 3} أطقم بيجامة سبايدرمان`);
 
       const order = {
         orderId,
@@ -954,9 +820,9 @@
         colorId: state.selectedColorId,
         size: state.selectedSize,
         age: state.selectedSize,
-        pack: state.selectedPackName,
+        pack: packName,
         quantity: state.quantity,
-        pieces: state.quantity * (state.isDouble ? (state.currentProductId === "spiderman" ? 6 : 2) : (state.currentProductId === "spiderman" ? 3 : 1)),
+        pieces: piecesCount,
         price: total,
         total: total,
         bundlePrice: total,
@@ -1003,29 +869,33 @@
         order_id: orderId,
       });
 
-      // Reset form
-      orderForm.reset();
-      state.quantity = 1;
-      if (qtyInput) qtyInput.value = "1";
-      updatePriceUI();
-
-      // Show inline success feedback directly without any popup modal
-      if (orderInlineSuccess) {
-        orderInlineSuccess.style.display = "flex";
-        orderInlineSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Show Success Confirmation Card (matching user reference Image 2)
+      if (successOrderId) successOrderId.textContent = orderId;
+      if (btnWhatsappSuccess) {
+        const waMsg = `سلام عليكم متجر منارة، قمت للتو بتأكيد طلبي رقم ${orderId}: ${prod.name} (اللون: ${state.selectedColorName} - المقاس: ${state.selectedSize} - الكمية: ${state.quantity}) بمبلغ إجمالي ${total} درهم. الاسم: ${name}، الهاتف: ${phone}، العنوان: ${city} ${address}. يرجى تأكيد الشحن والتوصيل المجاني.`;
+        btnWhatsappSuccess.href = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(waMsg)}`;
       }
 
-      btnSubmitOrder.style.background = "#059669";
-      btnSubmitOrder.style.borderColor = "#047857";
-      submitText.textContent = "تم تسجيل طلبك بنجاح! سنتصل بك قريباً لتأكيده ✅";
+      if (orderForm) orderForm.style.display = "none";
+      if (orderSuccessCard) {
+        orderSuccessCard.style.display = "flex";
+        orderSuccessCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
 
-      setTimeout(() => {
-        state.submitting = false;
-        btnSubmitOrder.disabled = false;
-        btnSubmitOrder.style.background = "";
-        btnSubmitOrder.style.borderColor = "";
-        submitText.textContent = "اضغط هنا لتأكيد الطلب الآن 🛍️";
-      }, 7000);
+      if (btnAnotherOrder) {
+        btnAnotherOrder.onclick = () => {
+          orderForm.reset();
+          state.quantity = 1;
+          if (qtyInput) qtyInput.value = "1";
+          updatePriceUI();
+          if (orderSuccessCard) orderSuccessCard.style.display = "none";
+          if (orderForm) orderForm.style.display = "flex";
+          state.submitting = false;
+          btnSubmitOrder.disabled = false;
+          submitText.textContent = "⚡ اشتري الآن";
+          showStorefront();
+        };
+      }
     });
   }
 
@@ -1049,7 +919,6 @@
     renderProductUI();
     initColorAndGalleryControls();
     initSizeSelector();
-    initPackCards();
     initQuantityControls();
     initCategoryTabs();
     initCatalogButtons();
